@@ -318,9 +318,7 @@ alias firefox="firefox 2>/dev/null"
 alias thm='sudo openvpn ~/.local/phlmbr.ovpn'
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
-
-# ping limiter
-alias ping='ping -c 6 '
+alias ping='ping -c 6 ' #ping limiter
 
 
 # running a simple script that gets current weather... 
