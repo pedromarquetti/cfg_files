@@ -40,14 +40,14 @@ setup_git(){
     fi 
 }
 
-config(){ //alias used to make it easier to work with these files
+config(){ # alias used to make it easier to work with these files
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 
 main(){
     print_cyan "Hi, $(whoami), how are you?"
     print_cyan "Let's update everything first..."
-    sudo apt updare &&
+    sudo apt update &&
     sudo apt upgrade
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
