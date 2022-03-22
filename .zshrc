@@ -74,12 +74,10 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-    zsh-autocomplete
+#    zsh-autocomplete
     zsh-autosuggestions
 
 )
-
-#plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,11 +112,10 @@ autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+
 # autocomplete stuff
-zstyle ':autocomplete:*' min-input 1 # int
-# Wait until this many characters have been typed, before showing completions.
-#
-#
+zstyle ':autocomplete:*' min-input 1 # Wait until this many characters have been typed, before showing completions.
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -225,13 +222,16 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # enable auto-suggestions based on the history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh || -f $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    # . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     # change suggestion color
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
 
-#####################
+#############################
+# User configuration
+#############################
+
 function updater() {
     RED='\033[0;31m'
     NC='\033[0m' # No Color
@@ -251,40 +251,9 @@ function updater() {
     flatpak uninstall --unused
 
 }
-#############################
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
-
-# znap plugins
-
-# znap source marlonrichert/zsh-autocomplete
 
 #### custom aliases ayyy
 
@@ -326,5 +295,3 @@ alias ping='ping -c 6 ' #ping limiter
 # clone it and change file location
 # node ${HOME}/Documents/programming/js/weather/index.js
 
-# my exports
-export DOCS="${HOME}/Documents"
