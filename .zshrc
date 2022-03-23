@@ -34,6 +34,7 @@ bindkey '^K' kill-whole-line                   #kill whole line
 bindkey ' ' magic-space                        # do history expansion on space
 bindkey '^[[3;5~' kill-word                    # ctrl + delete -> kill word foward
 bindkey '^H' backward-kill-word                # kill word left of cursor << this key can vary
+# bindkey '^?' backward-kill-word              # if the above doesn't work, try this
 bindkey '^[[3~' delete-char                    # delete
 bindkey '^[[1;5C' forward-word                 # ctrl + ->
 bindkey '^[[1;5D' backward-word                # ctrl + <-
