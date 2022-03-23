@@ -4,14 +4,14 @@ This is a collection of my basic config files for my _PopOS_ env, created with a
 
 I'll always be adding more stuff
 
-# Contents:
+## Contents:
 
 1. setup.sh _(work in proggress)_ with automated installation.
 2. .zshrc with my preferred aliases.
 3. vscode config/settings/snippets.
 4. some files in my .config (tilix and some dconf settings like text scaling factor)
 
-# Setup
+## Setup
 
 1. For an automated setup just run:
 
