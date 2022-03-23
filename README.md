@@ -6,7 +6,7 @@ I'll always be adding more stuff
 
 # Contents:
 
-1. setup.sh _(coming soon)_ with automated installation.
+1. setup.sh _(work in proggress)_ with automated installation.
 2. .zshrc with my preferred aliases.
 3. vscode config/settings/snippets
 
