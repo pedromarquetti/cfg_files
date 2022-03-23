@@ -13,7 +13,8 @@
 	"editor.formatOnSave": true,
 	"indentRainbow.colorOnWhiteSpaceOnly": true,
 	"editor.tokenColorCustomizations": {
-		"variables": "#FFFF00"
+		"variables": "#FFFF00",
+		"comments": "#818181",
 	},
 	"editor.guides.bracketPairs": true,
 	"editor.autoClosingBrackets": "always",
@@ -21,9 +22,6 @@
 	"editor.autoClosingOvertype": "always",
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
-	},
-	"workbench.colorCustomizations": {
-		"[Material Theme Ocean High Contrast]": {}
 	},
 	"files.saveConflictResolution": "overwriteFileOnDisk",
 	"editor.linkedEditing": true,
