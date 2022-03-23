@@ -1,12 +1,12 @@
 # Welcome to my Dotfiles
 
-This is a collection of my basic config files for my _PopOS_ env, created with a bare git repo that auto-tracks my files (idea from [here](https://www.atlassian.com/git/tutorials/dotfiles)
+This is a collection of my basic config files for my _PopOS_ env, created with a bare git repo that auto-tracks my files (idea from [here](https://www.atlassian.com/git/tutorials/dotfiles))
 
 I'll always be adding more stuff
 
 # Contents:
 
-1. setup.sh _(coming soon)_ with automated installation.
+1. setup.sh _(work in proggress)_ with automated installation.
 2. .zshrc with my preferred aliases.
 3. vscode config/settings/snippets
 
