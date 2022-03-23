@@ -14,8 +14,14 @@
 	"indentRainbow.colorOnWhiteSpaceOnly": true,
 	"editor.tokenColorCustomizations": {
 		"variables": "#FFFF00",
-		"comments": "#818181",
+		"comments": "#008394",
 	},
+	"workbench.colorCustomizations": {
+		"editorLineNumber.foreground": "#ffffff3d",
+		"editorLineNumber.activeForeground": "#ffffffd0",
+		"editor.lineHighlightBorder": "#6868683f",
+	},
+	"workbench.colorTheme": "Community Material Theme Ocean High Contrast",
 	"editor.guides.bracketPairs": true,
 	"editor.autoClosingBrackets": "always",
 	"editor.autoClosingDelete": "always",
@@ -113,5 +119,4 @@
 	"eslint.alwaysShowStatus": true,
 	"git.ignoredRepositories": ["/home/phlm/.oh-my-zsh"],
 	"scm.alwaysShowActions": true,
-	"workbench.colorTheme": "Community Material Theme Ocean High Contrast"
 }
