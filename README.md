@@ -13,18 +13,25 @@ I'll always be adding more stuff
 
 # Setup
 
-Just run
+1. For an automated setup just run:
 
 ```
 curl -L https://raw.githubusercontent.com/PedroMarquetti/cfg_files/master/.local/bin/setup.sh | bash
 ```
 
-For an automated setup...
-
-Or you could
+2. Or you could do it manually
 
 ```
 git clone https://github.com/PedroMarquetti/cfg_files.git
 ```
 
-And copy files manually
+and copy files manually
+
+3. To install my [list of VSCode extensions](https://github.com/PedroMarquetti/cfg_files/blob/08b38e9830382f88b1896c6309623591cbe8f69d/.config/Code/Backups/code_extensions.lst), simply
+
+```
+cd <file location>
+chmod u+x code_extensions.lst && ./code_extensions.lst
+```
+
+some errors may occur, but you can always do it manually
