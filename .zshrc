@@ -1,11 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# setting printer var>
-export PRINTER=HP_LaserJet_Pro_M12w
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -13,77 +7,18 @@ export PRINTER=HP_LaserJet_Pro_M12w
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and-will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-
 plugins=(
-#    zsh-autocomplete
+#    zsh-autocomplete # Slows down my shell startup, run git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete to install in oh my zsh
     zsh-autosuggestions
-
 )
 
 source $ZSH/oh-my-zsh.sh
 
 #######################
-#copied from old zshrc>
+# copied from old zshrc>
 setopt autocd              # change directory just by typing its name
 setopt correct             # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -114,8 +49,8 @@ compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
-# autocomplete stuff
-zstyle ':autocomplete:*' min-input 1 # Wait until this many characters have been typed, before showing completions.
+# # autocomplete stuff -- not in use?
+# zstyle ':autocomplete:*' min-input 1 # Wait until this many characters have been typed, before showing completions.
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -257,14 +192,10 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 #### custom aliases ayyy
-
-# some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
 alias ls='ls -lt --color=auto'
 alias lss='ls -lah --color=auto'
-
-### cd stuf
 alias c='clear'
 alias cdd='cd ~'
 
@@ -272,12 +203,12 @@ alias cdd='cd ~'
 alias doc='libreoffice --writer' #open doc file
 alias calc='libreoffice --calc'  #open calc (sheets)
 
-###misc
+### misc
 alias vim='vim -c "set number"' #show
 alias nano='nano -l'            #line nums
 alias img='eog '                #img opener
 alias rm='rm -ri'               #recursive  & ask to remove
-alias rmf='rm -rf '             # recursive force
+alias rmf='rm -rf '             # recursive force -- caution
 alias whois='whois -H'          #hides legal stuff
 alias myip='python3 /home/phlm/Documents/programming/python/my_ip/my_ip.py'
 alias fho='firefox 2>/dev/null -P fhouniararas'
@@ -285,7 +216,6 @@ alias open='gio open 2>/dev/null '
 alias py='python3'
 alias vpnstat='curl https://www.cloudflare.com/cdn-cgi/trace/'
 alias firefox="firefox 2>/dev/null"
-alias thm='sudo openvpn ~/.local/phlmbr.ovpn'
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias ping='ping -c 6 ' #ping limiter
