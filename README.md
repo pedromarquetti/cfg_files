@@ -27,11 +27,15 @@ git clone https://github.com/PedroMarquetti/cfg_files.git
 
 and copy files manually
 
-3. To install my [list of VSCode extensions](https://github.com/PedroMarquetti/cfg_files/blob/08b38e9830382f88b1896c6309623591cbe8f69d/.config/Code/Backups/code_extensions.lst), simply
+3. To install my [list of VSCode extensions](https://github.com/PedroMarquetti/cfg_files/blob/08b38e9830382f88b1896c6309623591cbe8f69d/.config/Code/Backups/code_extensions.lst), run vscode first:
+
+`code .`
+
+then
 
 ```
-cd <file location>
-chmod u+x code_extensions.lst && ./code_extensions.lst
+cd $HOME/.config/Code/Backups
+chmod u+x $HOME/.config/Code/Backups/code_extensions.lst && $HOME/.config/Code/Backups/code_extensions.lst
 ```
 
 some errors may occur, but you can always do it manually
