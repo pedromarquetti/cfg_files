@@ -1,7 +1,5 @@
 #!/bin/bash
 
-SCRIPTDIR="${0}"
-
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
     [GREEN]=$'\033[0;32m'
@@ -76,7 +74,7 @@ setup_env(){
     print_cyan "moving old zshrc from HOME"
     mv $HOME/.zshrc $HOME/.dot-backup
     print_cyan "copying .config folder"
-    cp $HOME/.config $HOME/.dot-backup/.config-bckp
+    cp -r $HOME/.config $HOME/.dot-backup/.config-bckp
     print_red "if any errors occured here, cloning the repo will probably fail, try doing it manually"
     sleep 5
 }
@@ -89,6 +87,7 @@ install_code(){
         print_green "done?"
         if [[ ! -f /bin/code ]]; then
             print_red "vscode not yet installed... apt install did not work... installing the repo from https://code.visualstudio.com/docs/setup/linux instructions..."
+            sleep 5
             sudo apt-get install wget gpg &&
             wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg &&
             sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ &&
@@ -108,7 +107,7 @@ main(){
     sudo apt upgrade
     print_cyan "and install vscode now"
     install_code
-    print_green "vscode installed"
+    print_green "vscode installed... yayyyy"
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
     print_red "----------"
