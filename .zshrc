@@ -212,7 +212,6 @@ alias rm='rm -ri'               #recursive  & ask to remove
 alias rmf='rm -rf '             # recursive force -- caution
 alias whois='whois -H'          #hides legal stuff
 alias myip='python3 /home/phlm/Documents/programming/python/my_ip/my_ip.py'
-alias fho='firefox 2>/dev/null -P fhouniararas'
 alias open='gio open 2>/dev/null '
 alias py='python3'
 alias vpnstat='curl https://www.cloudflare.com/cdn-cgi/trace/'
