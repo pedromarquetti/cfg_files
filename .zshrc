@@ -43,6 +43,7 @@ bindkey '^[[6~' end-of-buffer-or-history       # page down
 bindkey '^[[H' beginning-of-line               # home
 bindkey '^[[F' end-of-line                     # end
 bindkey '^[[Z' undo                            # shift + tab undo last action
+bindkey '^ '   autosuggest-accept	       # accept autosuggest with ctrl+space
 
 # enable completion features
 autoload -Uz compinit
