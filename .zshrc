@@ -16,6 +16,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
 #######################
 # copied from old zshrc>
