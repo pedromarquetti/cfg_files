@@ -33,5 +33,25 @@
 			"}"
 		],
 		"prefix": "elif"
+	},
+	"if else statement":{
+		"description": "Creates if statement with 'else'",
+		"body": [
+			"if $1 {",
+			"\t$2",
+			"} else {",
+			"\t$0",
+			"}"
+		],
+		"prefix": "else"
+	},
+	"Struct":{
+		"description": "Simple struct {} generator",
+		"body": [
+			"struct $1 {",
+			"\t$0,",
+			"}"
+		],
+		"prefix": "str"
 	}
 }
