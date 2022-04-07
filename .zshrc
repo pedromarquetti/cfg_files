@@ -1,5 +1,6 @@
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
 plugins=(
     zsh-autocomplete # Slows down my shell startup, run git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete to install in oh my zsh
     zsh-autosuggestions
@@ -46,8 +47,8 @@ bindkey '^[[Z' undo                            # shift + tab undo last action
 bindkey '^ '   autosuggest-accept	       # accept autosuggest with ctrl+space
 
 # enable completion features
-autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
+# autoload -Uz compinit
+# compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
