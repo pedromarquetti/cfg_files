@@ -194,13 +194,22 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-#### custom aliases ayyy
+#### custom aliases ayyy ####
+
 alias ll='ls -l'
 alias la='ls -A'
 alias ls='ls -lt --color=auto'
 alias lss='ls -lah --color=auto'
 alias c='clear'
 alias cdd='cd ~'
+
+### git
+alias gru="git remote update"
+alias gpull="git pull"
+alias gpush="git push"
+alias gstats="git status"
+alias gadd="git add"
+alias gcommit="git commit"
 
 ### docs
 alias doc='libreoffice --writer' #open doc file
