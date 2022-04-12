@@ -10,6 +10,7 @@ I'll always be adding more stuff
 2. .zshrc with my preferred aliases.
 3. vscode config/settings/snippets.
 4. some files in my .config (tilix and some dconf settings like text scaling factor)
+5. .backup containing crontab-install-scripts
 
 ## Setup
 
