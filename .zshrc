@@ -6,11 +6,12 @@ plugins=(
     zsh-autosuggestions
 )
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -53,7 +54,7 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 ## autocomplete config
-zstyle ':autocomplete:*' min-input 1 # Wait until this many characters have been typed, before showing completions.
+zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -79,9 +80,10 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PROMPT="%F{%(#.blue.green)}%n%F{white} %~ > "
-    PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
-    RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
+    # PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
+
+    # RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
+
     #enable syntax-highlighting
     if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
         . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -129,11 +131,10 @@ if [ "$color_prompt" = yes ]; then
         ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
     fi
 else
-    #PROMPT='%~ %(!.#.\$)  '
-    #PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
-    PROMPT='${debian_chroot:+($debian_chroot)}%n@%m:%~%# '
+    PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
+    RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
 fi
-unset color_prompt force_color_prompt
+# unset color_prompt force_color_prompt
 
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -190,6 +191,7 @@ function updater() {
     flatpak uninstall --unused
 
 }
+#fix for an TILIX error i was having
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
@@ -203,7 +205,7 @@ alias lss='ls -lah --color=auto'
 alias c='clear'
 alias cdd='cd ~'
 
-### git
+# ### git
 alias gru="git remote update"
 alias gpull="git pull"
 alias gpush="git push"
