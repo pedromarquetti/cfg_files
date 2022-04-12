@@ -41,6 +41,7 @@
 		"*.html": "html",
 		"*.json": "jsonc"
 	},
+	"terminal.integrated.defaultProfile.linux": "zsh",
 	"code-runner.runInTerminal": true,
 	"python.defaultInterpreterPath": "/bin/python3",
 	"code-runner.executorMap": {
