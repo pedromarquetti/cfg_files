@@ -2,23 +2,15 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
-    zsh-autosuggestions
     zsh-autocomplete # Slows down my shell startup, run git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete to install in oh my zsh
+    zsh-autosuggestions
 )
-
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
 
 #######################
 # copied from old zshrc>
@@ -55,7 +47,7 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 ## autocomplete config
-# zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
+zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -81,9 +73,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    # PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
-
-    # RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
+    PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
+    RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
 
     #enable syntax-highlighting
     if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
