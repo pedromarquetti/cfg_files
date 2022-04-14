@@ -30,5 +30,9 @@
 	{
 		"key": "ctrl+alt+'",
 		"command": "workbench.action.terminal.moveToEditor"
+	},
+	{
+		"key": "ctrl+alt+s",
+		"command": "workbench.action.saveWorkspaceAs"
 	}
 ]
