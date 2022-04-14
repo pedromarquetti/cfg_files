@@ -1,4 +1,6 @@
-{
+{	
+	
+	"python.envFile": "${workspaceFolder}/.env",
 	"code-runner.saveAllFilesBeforeRun": true,
 	"materialTheme.accent": "Yellow",
 	"extensions.autoUpdate": true,
