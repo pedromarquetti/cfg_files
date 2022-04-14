@@ -198,6 +198,7 @@ alias c='clear'
 alias cdd='cd ~'
 
 # ### git
+alias ginit="git init"
 alias gru="git remote update"
 alias gpull="git pull"
 alias gpush="git push"
