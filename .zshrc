@@ -8,10 +8,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 #######################
 # copied from old zshrc>
 setopt autocd              # change directory just by typing its name
