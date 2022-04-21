@@ -1,5 +1,4 @@
-{	
-	
+{
 	"python.envFile": "${workspaceFolder}/.env",
 	"code-runner.saveAllFilesBeforeRun": true,
 	"materialTheme.accent": "Yellow",
@@ -9,8 +8,6 @@
 	"python.analysis.completeFunctionParens": true,
 	"prettier.jsxBracketSameLine": true,
 	"prettier.jsxSingleQuote": true,
-	"prettier.tabWidth": 4,
-	"prettier.useTabs": true,
 	"editor.suggestSelection": "first",
 	"editor.formatOnSave": true,
 	"indentRainbow.colorOnWhiteSpaceOnly": true,
@@ -121,5 +118,11 @@
 	"editor.unicodeHighlight.invisibleCharacters": false,
 	"eslint.alwaysShowStatus": true,
 	"git.ignoredRepositories": ["/home/phlm/.oh-my-zsh"],
-	"scm.alwaysShowActions": true
+	"scm.alwaysShowActions": true,
+	"prettier.useTabs": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"python.formatting.provider": "autopep8",
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	}
 }
