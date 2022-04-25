@@ -53,7 +53,8 @@ install_zsh(){
     if [[ ! -f /bin/zsh ]]; then
         print_red "zsh not installed!"
         print_cyan "installing zsh first..."
-        sudo apt install zsh &&
+        sudo apt install zsh --yes &&
+        sudo apt install zsh-syntax-highlighting
         print_cyan "installing oh my zsh and plugins"
         install_ohmy
     else
