@@ -129,6 +129,8 @@ main(){
     print_green "Done"
     config checkout
     config config status.showUntrackedFiles no
+    chsh -s /bin/zsh 
+    print_cyan "maybe you'll need to reboot now"
 }
 
 main
