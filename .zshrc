@@ -221,7 +221,8 @@ alias firefox="firefox 2>/dev/null"
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias ping='ping -c 6 ' #ping limiter
-
+alias dconf_backup='dconf dump / > .config/backup.dconf'
+alias dconf_restore='dconf load / < .config/backup.dconf'
 
 # running a simple script that gets current weather... 
 # can be found at> https://github.com/PedroMarquetti/BasicJSConsumer
