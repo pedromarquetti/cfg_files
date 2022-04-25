@@ -180,6 +180,11 @@ function updater() {
 
 }
 #fix for an TILIX error i was having
+if [[ ! -f /etc/profile.d/vte.sh ]]; then
+	echo "/etc/profile.d/vte.sh not found!!! tilix will throw an err... "
+	echo "running 'sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh'"
+	sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
