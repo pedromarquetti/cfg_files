@@ -1,0 +1,128 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/com/gexperts/Tilix/keybindings/'
+saved-view='/com/gexperts/Tilix/'
+show-warning=false
+window-height=857
+window-is-maximized=false
+window-width=1217
+
+[io/elementary/appcenter/settings]
+cached-drivers=@as []
+last-refresh-time=int64 1650911139
+
+[org/gnome/control-center]
+last-panel='keyboard'
+
+[org/gnome/desktop/a11y/magnifier]
+mouse-tracking='proportional'
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+per-window=false
+sources=[('xkb', 'br')]
+xkb-options=@as []
+
+[org/gnome/desktop/interface]
+cursor-size=90
+text-scaling-factor=1.5
+
+[org/gnome/desktop/notifications]
+application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox']
+
+[org/gnome/desktop/notifications/application/code]
+application-id='code.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-control-center]
+application-id='gnome-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-terminal]
+application-id='org.gnome.Terminal.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=true
+
+[org/gnome/desktop/privacy]
+report-technical-problems=false
+
+[org/gnome/desktop/wm]
+close=['<Alt>F4']
+minimize=['<Super>Page_Down']
+panel-run-dialog=['<Alt>F2', '<Super>r']
+show-desktop=['<Super>d']
+switch-group=['<Primary>apostrophe']
+switch-group-backward=['<Primary><Shift>apostrophe']
+switch-panels=@as []
+switch-panels-backward=@as []
+
+[org/gnome/desktop/wm/keybindings]
+show-desktop=['<Super>d']
+switch-applications=['<Alt>Tab']
+switch-applications-backward=['<Shift><Alt>Tab']
+switch-group=['<Primary>apostrophe']
+switch-group-backward=['<Primary><Shift>apostrophe']
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=799
+window-width=1148
+
+[org/gnome/settings-daemon/plugins/media-keys]
+decrease-text-size=['<Primary>KP_Subtract', '<Primary>minus']
+email=@as []
+home=['<Super>e']
+increase-text-size=['<Primary>equal', '<Primary>KP_Add']
+
+[org/gnome/shell]
+command-history=['r']
+disabled-extensions=@as []
+enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'cosmic-dock@system76.com']
+favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop']
+welcome-dialog-last-shown-version='42.0'
+
+[org/gnome/shell/extensions/dash-to-dock]
+dash-max-icon-size=69
+dock-fixed=false
+extend-height=false
+intellihide=true
+manualhide=false
+multi-monitor=false
+
+[org/gnome/shell/extensions/pop-shell]
+tile-by-default=false
+toggle-tiling=['<Super>y', '<Super>apostrophe']
+
+[org/gnome/shell/keybindings]
+screenshot=['Print']
+show-screenshot-ui=['<Shift>Print']
+toggle-overview=['<Super>w']
+
+[org/gnome/system/location]
+enabled=false
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=216
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+window-position=(170, 101)
+window-size=(1173, 890)
