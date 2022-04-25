@@ -40,9 +40,11 @@ setup_git(){
 }
 
 install_ohmy(){
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     print_cyan "installing zsh-autosuggestions"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+
     print_red "if any errors occured, try running manually"
     sleep 2
 }
@@ -72,7 +74,9 @@ setup_env(){
     print_cyan "creating a bckp folder"
     mkdir -p .dot-backup
     print_cyan "moving old zshrc from HOME"
-    mv $HOME/.zshrc $HOME/.dot-backup
+    if [[ -f $HOME/.zshrc ]]; then
+        mv $HOME/.zshrc $HOME/.dot-backup
+    fi
     print_cyan "copying .config folder"
     cp -r $HOME/.config $HOME/.dot-backup/.config-bckp
     print_red "if any errors occured here, cloning the repo will probably fail, try doing it manually"
