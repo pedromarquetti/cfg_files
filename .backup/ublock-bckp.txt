@@ -1,45 +1,52 @@
 {
-  "timeStamp": 1650027455676,
+  "timeStamp": 1650897731470,
   "version": "1.42.4",
   "userSettings": {
+    "externalLists": "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
     "firewallPaneMinimized": false,
     "importedLists": [
-      "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt"
+      "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt",
+      "https://www.i-dont-care-about-cookies.eu/abp/"
     ],
     "popupPanelSections": 63,
     "webrtcIPAddressHidden": true
   },
   "selectedFilterLists": [
-    "ublock-quick-fixes",
-    "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt",
     "user-filters",
     "ublock-filters",
     "ublock-badware",
     "ublock-privacy",
+    "ublock-quick-fixes",
     "ublock-abuse",
     "ublock-unbreak",
     "easylist",
+    "adguard-spyware",
+    "adguard-spyware-url",
+    "block-lan",
     "easyprivacy",
     "urlhaus-1",
-    "spam404-0",
+    "curben-phishing",
+    "curben-pup",
     "adguard-annoyance",
     "fanboy-thirdparty_social",
     "fanboy-cookiemonster",
+    "fanboy-annoyance",
     "ublock-annoyances",
-    "plowe-0"
+    "plowe-0",
+    "spa-1",
+    "https://raw.githubusercontent.com/Spam404/lists/master/adblock-list.txt",
+    "https://www.i-dont-care-about-cookies.eu/abp/"
   ],
   "hiddenSettings": {},
   "whitelist": [
     "about-scheme",
     "chrome-extension-scheme",
     "chrome-scheme",
+    "cloud.memphis.com.br",
     "edge-scheme",
-    "meet.google.com",
     "moz-extension-scheme",
     "opera-scheme",
-    "unilaboratorio.com.br",
     "vivaldi-scheme",
-    "www.itaucorretora.com.br",
     "wyciwyg-scheme"
   ],
   "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop",
