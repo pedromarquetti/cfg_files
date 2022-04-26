@@ -1,6 +1,6 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/com/gexperts/Tilix/keybindings/'
-saved-view='/com/gexperts/Tilix/'
+saved-pathbar-path='/org/gnome/shell/extensions/dash-to-dock/activate-single-window'
+saved-view='/org/gnome/shell/extensions/dash-to-dock/activate-single-window'
 show-warning=false
 window-height=857
 window-is-maximized=false
@@ -9,7 +9,14 @@ window-width=1217
 [com/gexperts/Tilix]
 control-scroll-zoom=true
 copy-on-select=true
+prompt-on-close-process=false
 quake-specific-monitor=0
+
+[com/gexperts/Tilix/keybindings]
+session-add-down='<Primary><Alt>Down'
+session-add-right='<Primary><Alt>Right'
+session-close='disabled'
+terminal-close='<Primary><Shift>w'
 
 [com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 default-size-columns=90
@@ -21,7 +28,14 @@ visible-name='Default'
 
 [io/elementary/appcenter/settings]
 cached-drivers=@as []
-last-refresh-time=int64 1650911139
+last-refresh-time=int64 1650924022
+window-maximized=true
+window-position=(409, 171)
+window-size=(1100, 660)
+
+[org/gnome/Totem]
+active-plugins=['screensaver', 'variable-rate', 'autoload-subtitles', 'recent', 'rotation', 'apple-trailers', 'save-file', 'open-directory', 'mpris', 'skipto', 'screenshot', 'movie-properties', 'vimeo']
+subtitle-encoding='UTF-8'
 
 [org/gnome/control-center]
 last-panel='keyboard'
@@ -36,11 +50,15 @@ sources=[('xkb', 'br')]
 xkb-options=@as []
 
 [org/gnome/desktop/interface]
+clock-format='24h'
 cursor-size=90
 text-scaling-factor=1.5
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox']
+application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor']
+
+[org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
 
 [org/gnome/desktop/notifications/application/code]
 application-id='code.desktop'
@@ -50,6 +68,12 @@ application-id='firefox.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/io-elementary-appcenter]
+application-id='io.elementary.appcenter.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-terminal]
 application-id='org.gnome.Terminal.desktop'
@@ -93,33 +117,71 @@ sidebar-width=200
 window-height=799
 window-width=1148
 
+[org/gnome/gedit/plugins]
+active-plugins=['docinfo', 'sort', 'spell', 'openlinks', 'filebrowser', 'modelines']
+
+[org/gnome/gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///home/phlm/.private'
+
+[org/gnome/gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(900, 700)
+state=43908
+
+[org/gnome/nautilus/icon-view]
+default-zoom-level='small'
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+maximized=true
+sidebar-width=321
+
 [org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=@as []
 decrease-text-size=@as []
 email=@as []
 home=['<Super>e']
 increase-text-size=@as []
 terminal=@as []
-www=['<Super>b', '<Super>2']
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/PopLaunch1]
-binding='<Super>1'
-command='tilix'
-name='tilix'
+www=['<Super>b']
 
 [org/gnome/shell]
 command-history=['r']
+disable-user-extensions=false
 disabled-extensions=@as []
-enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'cosmic-dock@system76.com']
-favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'code.desktop', 'org.gnome.Nautilus.desktop', 'gnome-control-center.desktop']
+enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'cosmic-dock@system76.com', 'dash2dock-lite@icedman.github.com']
+favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Calculator.desktop']
 welcome-dialog-last-shown-version='42.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
+app-shift-hotkey-1=['<Shift><Super>1']
+background-opacity=0.80000000000000004
 dash-max-icon-size=69
 dock-fixed=false
+dock-position='BOTTOM'
 extend-height=false
+height-fraction=0.90000000000000002
 intellihide=true
 manualhide=false
 multi-monitor=false
+preview-size-scale=0.5
+
+[org/gnome/shell/extensions/dash2dock-lite]
+autohide-dash=true
+background-dark=true
+background-opacity=1.0
+reuse-dash=false
+shrink-icons=false
 
 [org/gnome/shell/extensions/pop-shell]
 tile-by-default=false
@@ -134,9 +196,10 @@ toggle-overview=['<Super>w']
 enabled=false
 
 [org/gtk/settings/file-chooser]
+clock-format='24h'
 date-format='regular'
 location-mode='path-bar'
-show-hidden=true
+show-hidden=false
 show-size-column=true
 show-type-column=true
 sidebar-width=216
@@ -144,5 +207,5 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(170, 101)
+window-position=(374, 78)
 window-size=(1173, 890)
