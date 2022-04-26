@@ -8,9 +8,8 @@ I'll always be adding more stuff
 
 1. setup.sh _(work in proggress)_ with automated installation.
 2. .zshrc with my preferred aliases.
-3. vscode config/settings/snippets.
-4. some files in my .config (tilix and some dconf settings like text scaling factor)
-5. .backup containing crontab-install-scripts
+3. .config with vscode config/settings/snippets and dconf settings 
+5. .backup containing crontab-install-scripts and UBlockOrigin backup file
 
 ## Setup
 
