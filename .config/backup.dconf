@@ -1,8 +1,8 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/shell/extensions/dash-to-dock/activate-single-window'
-saved-view='/org/gnome/shell/extensions/dash-to-dock/activate-single-window'
+saved-pathbar-path='/org/gnome/shell/extensions/dash-to-dock/'
+saved-view='/org/gnome/shell/extensions/dash-to-dock/'
 show-warning=false
-window-height=857
+window-height=814
 window-is-maximized=false
 window-width=1217
 
@@ -28,7 +28,7 @@ visible-name='Default'
 
 [io/elementary/appcenter/settings]
 cached-drivers=@as []
-last-refresh-time=int64 1650924022
+last-refresh-time=int64 1651055717
 window-maximized=true
 window-position=(409, 171)
 window-size=(1100, 660)
@@ -38,7 +38,7 @@ active-plugins=['screensaver', 'variable-rate', 'autoload-subtitles', 'recent', 
 subtitle-encoding='UTF-8'
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='desktop-dock'
 
 [org/gnome/desktop/a11y/magnifier]
 mouse-tracking='proportional'
@@ -55,7 +55,8 @@ cursor-size=90
 text-scaling-factor=1.5
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor']
+application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-evolution-alarm-notify']
+show-banners=false
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
@@ -71,6 +72,9 @@ application-id='gnome-control-center.desktop'
 
 [org/gnome/desktop/notifications/application/io-elementary-appcenter]
 application-id='io.elementary.appcenter.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify]
+application-id='org.gnome.Evolution-alarm-notify.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
@@ -104,6 +108,9 @@ switch-group-backward=['<Primary><Shift>apostrophe']
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
+
+[org/gnome/evolution-data-server/calendar]
+reminders-past=['f6ec18874333f51594ef7d6f666b387f4fe6958f\n8ec6d0d309d6746a36bb60abd568878870126371\t20220430\n1651017600\n1651276800\n1651449600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220430\r\nDTEND;VALUE=DATE:20220502\r\nDTSTAMP:20220131T182208Z\r\nUID:6a06685cfb16d3266b7592392df346c6ddd120b0\r\nCREATED:20220131T181413Z\r\nDESCRIPTION:<a __is_owner="true" href="https:\r\n //sites.usp.br/biotecnologia/area-aluno/ingresso/">ingresso<a/><br><br>\r\nLAST-MODIFIED:20220131T182208Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:13\r\nSTATUS:CONFIRMED\r\nSUMMARY:pós biotecnologia USP\r\nTRANSP:OPAQUE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63779336528\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:8aab628129dcb9d0cd9a35efa220d3c803b0d4f8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P3D\r\nX-EVOLUTION-ALARM-UID:8ec6d0d309d6746a36bb60abd568878870126371\r\nEND:VALARM\r\nEND:VEVENT\r\n']
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
@@ -156,25 +163,31 @@ terminal=@as []
 www=['<Super>b']
 
 [org/gnome/shell]
-command-history=['r']
+command-history=['R', 'README.mr', 'r']
 disable-user-extensions=false
-disabled-extensions=@as []
-enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'cosmic-dock@system76.com', 'dash2dock-lite@icedman.github.com']
+disabled-extensions=['ubuntu-dock@ubuntu.com']
+enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'text-scaler@phlm', 'dash-to-dock@micxgx.gmail.com', 'cosmic-dock@system76.com']
 favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Calculator.desktop']
 welcome-dialog-last-shown-version='42.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
 app-shift-hotkey-1=['<Shift><Super>1']
 background-opacity=0.80000000000000004
-dash-max-icon-size=69
+dash-max-icon-size=73
 dock-fixed=false
 dock-position='BOTTOM'
 extend-height=false
 height-fraction=0.90000000000000002
+hot-keys=true
 intellihide=true
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
 manualhide=false
 multi-monitor=false
-preview-size-scale=0.5
+preferred-monitor=-2
+preferred-monitor-by-connector='HDMI-1'
+preview-size-scale=0.46999999999999997
+show-mounts-network=true
+show-show-apps-button=false
 
 [org/gnome/shell/extensions/dash2dock-lite]
 autohide-dash=true
@@ -190,6 +203,10 @@ toggle-tiling=['<Super>y', '<Super>apostrophe']
 [org/gnome/shell/keybindings]
 screenshot=['Print']
 show-screenshot-ui=['<Shift>Print']
+switch-to-application-1=['<super>1']
+switch-to-application-2=['<super>2']
+switch-to-application-3=['<super>3']
+switch-to-application-4=['<super>4']
 toggle-overview=['<Super>w']
 
 [org/gnome/system/location]
@@ -207,5 +224,5 @@ sort-column='name'
 sort-directories-first=true
 sort-order='ascending'
 type-format='category'
-window-position=(374, 78)
+window-position=(373, 92)
 window-size=(1173, 890)
