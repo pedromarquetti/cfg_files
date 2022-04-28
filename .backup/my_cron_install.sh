@@ -32,10 +32,15 @@ print_cyan () {
 }
 
 function main(){
-    print_cyan "Hi, this script will install crontabs that i use to update my machine"
+    print_cyan "Hi, this script will install crontabs that I use to update my machine"
     sleep 1
     print_red "This is the crontab for non root user, and will NOT check if command already exists"
     sleep 5
     (crontab -l 2>/dev/null; echo $CRON) | crontab -
+    print_green "Done $(whoami)!"
+    print_cyan "creating '.local/logs/flatpak' path so the crontab is able to save logs there"
+    sleep 1 
+    mkdir  -p $HOME/.local/logs/flatpak   
+    print_green "Done! exiting"
 }
 main
