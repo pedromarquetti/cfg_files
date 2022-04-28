@@ -1,6 +1,6 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/shell/extensions/dash-to-dock/'
-saved-view='/org/gnome/shell/extensions/dash-to-dock/'
+saved-pathbar-path='/org/gnome/shell/enabled-extensions'
+saved-view='/org/gnome/shell/enabled-extensions'
 show-warning=false
 window-height=814
 window-is-maximized=false
@@ -9,8 +9,11 @@ window-width=1217
 [com/gexperts/Tilix]
 control-scroll-zoom=true
 copy-on-select=true
+prompt-on-close=true
 prompt-on-close-process=false
 quake-specific-monitor=0
+sidebar-on-right=false
+use-tabs=true
 
 [com/gexperts/Tilix/keybindings]
 session-add-down='<Primary><Alt>Down'
@@ -22,13 +25,21 @@ terminal-close='<Primary><Shift>w'
 default-size-columns=90
 default-size-rows=40
 font='Monospace 16'
+login-shell=true
 select-by-word-chars='-,./?%&#:_*[]()!@'
 use-system-font=false
 visible-name='Default'
 
+[com/github/donadigo/eddy]
+mime-types=['application/vnd.debian.binary-package', 'application/x-deb']
+window-height=619
+window-width=856
+window-x=50
+window-y=98
+
 [io/elementary/appcenter/settings]
 cached-drivers=@as []
-last-refresh-time=int64 1651055717
+last-refresh-time=int64 1651144861
 window-maximized=true
 window-position=(409, 171)
 window-size=(1100, 660)
@@ -55,7 +66,7 @@ cursor-size=90
 text-scaling-factor=1.5
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-evolution-alarm-notify']
+application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-evolution-alarm-notify', 'org-telegram-desktop']
 show-banners=false
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
@@ -82,6 +93,9 @@ application-id='org.gnome.Nautilus.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-terminal]
 application-id='org.gnome.Terminal.desktop'
 
+[org/gnome/desktop/notifications/application/org-telegram-desktop]
+application-id='org.telegram.desktop.desktop'
+
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
 
@@ -105,12 +119,15 @@ switch-applications-backward=['<Shift><Alt>Tab']
 switch-group=['<Primary>apostrophe']
 switch-group-backward=['<Primary><Shift>apostrophe']
 
+[org/gnome/evince/default]
+window-ratio=(1.0084712255258321, 0.7126568014219119)
+
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
 
 [org/gnome/evolution-data-server/calendar]
-reminders-past=['f6ec18874333f51594ef7d6f666b387f4fe6958f\n8ec6d0d309d6746a36bb60abd568878870126371\t20220430\n1651017600\n1651276800\n1651449600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220430\r\nDTEND;VALUE=DATE:20220502\r\nDTSTAMP:20220131T182208Z\r\nUID:6a06685cfb16d3266b7592392df346c6ddd120b0\r\nCREATED:20220131T181413Z\r\nDESCRIPTION:<a __is_owner="true" href="https:\r\n //sites.usp.br/biotecnologia/area-aluno/ingresso/">ingresso<a/><br><br>\r\nLAST-MODIFIED:20220131T182208Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:13\r\nSTATUS:CONFIRMED\r\nSUMMARY:pós biotecnologia USP\r\nTRANSP:OPAQUE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63779336528\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:8aab628129dcb9d0cd9a35efa220d3c803b0d4f8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P3D\r\nX-EVOLUTION-ALARM-UID:8ec6d0d309d6746a36bb60abd568878870126371\r\nEND:VALARM\r\nEND:VEVENT\r\n']
+reminders-past=['f6ec18874333f51594ef7d6f666b387f4fe6958f\n79e9662e7c7160a2f63d86165f6ffc394567ba86\t20220429\n1651136400\n1651190400\n1651276800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180429\r\nDTEND;VALUE=DATE:20180430\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=29;BYMONTH=4\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004681891795@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Thais Honoratto\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:0f22fd90fa7a4524bcb550e6417d007839d9d500\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:79e9662e7c7160a2f63d86165f6ffc394567ba86\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n8ec6d0d309d6746a36bb60abd568878870126371\t20220430\n1651017600\n1651276800\n1651449600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220430\r\nDTEND;VALUE=DATE:20220502\r\nDTSTAMP:20220131T182208Z\r\nUID:6a06685cfb16d3266b7592392df346c6ddd120b0\r\nCREATED:20220131T181413Z\r\nDESCRIPTION:<a __is_owner="true" href="https:\r\n //sites.usp.br/biotecnologia/area-aluno/ingresso/">ingresso<a/><br><br>\r\nLAST-MODIFIED:20220131T182208Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:13\r\nSTATUS:CONFIRMED\r\nSUMMARY:pós biotecnologia USP\r\nTRANSP:OPAQUE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63779336528\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:8aab628129dcb9d0cd9a35efa220d3c803b0d4f8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P3D\r\nX-EVOLUTION-ALARM-UID:8ec6d0d309d6746a36bb60abd568878870126371\r\nEND:VALARM\r\nEND:VEVENT\r\n']
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
@@ -130,7 +147,7 @@ active-plugins=['docinfo', 'sort', 'spell', 'openlinks', 'filebrowser', 'modelin
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/phlm/.private'
+virtual-root='file:///home/phlm/Documents/IR/IRPF2022'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -165,14 +182,15 @@ www=['<Super>b']
 [org/gnome/shell]
 command-history=['R', 'README.mr', 'r']
 disable-user-extensions=false
-disabled-extensions=['ubuntu-dock@ubuntu.com']
-enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'text-scaler@phlm', 'dash-to-dock@micxgx.gmail.com', 'cosmic-dock@system76.com']
-favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Calculator.desktop']
+disabled-extensions=['ubuntu-dock@ubuntu.com', 'cosmic-dock@system76.com']
+enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'dash2dock-lite@icedman.github.com']
+favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'org.gnome.Contacts.desktop', 'org.onlyoffice.desktopeditors.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
 welcome-dialog-last-shown-version='42.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
 app-shift-hotkey-1=['<Shift><Super>1']
 background-opacity=0.80000000000000004
+click-action='minimize-or-previews'
 dash-max-icon-size=73
 dock-fixed=false
 dock-position='BOTTOM'
@@ -193,7 +211,7 @@ show-show-apps-button=false
 autohide-dash=true
 background-dark=true
 background-opacity=1.0
-reuse-dash=false
+reuse-dash=true
 shrink-icons=false
 
 [org/gnome/shell/extensions/pop-shell]
