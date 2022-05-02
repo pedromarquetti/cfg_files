@@ -34,5 +34,13 @@
 	{
 		"key": "ctrl+alt+s",
 		"command": "workbench.action.saveWorkspaceAs"
+	},
+	{
+		"key": "ctrl+l ctrl+c",
+		"command": "editor.action.transformToLowercase"
+	},
+	{
+		"key": "ctrl+u ctrl+c",
+		"command": "editor.action.transformToUppercase"
 	}
 ]
