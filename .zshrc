@@ -229,6 +229,7 @@ alias ping='ping -c 6 ' #ping limiter
 alias dconf_backup='dconf dump / > .config/backup.dconf'
 alias dconf_restore='dconf load / < .config/backup.dconf'
 alias flatpak_backup='flatpak list --columns=application --app | awk '{print "flatpak install  --user \""$0"\" "}' > .backup/flatpak_backup.sh'
+alias mkdir='mkdir -p '
 # running a simple script that gets current weather... 
 # can be found at> https://github.com/PedroMarquetti/BasicJSConsumer
 # clone it and change file location
