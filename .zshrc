@@ -226,9 +226,10 @@ alias firefox="firefox 2>/dev/null"
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias ping='ping -c 6 ' #ping limiter
-alias dconf_backup='dconf dump / > .config/backup.dconf'
-alias dconf_restore='dconf load / < .config/backup.dconf'
-alias flatpak_backup='flatpak list --columns=application --app | awk '{print "flatpak install  --user \""$0"\" "}' > .backup/flatpak_backup.sh'
+alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
+alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
+alias backup_flatpak="flatpak list --columns=application --app | awk '{print "flatpak install  --user \""$0"\" "}' > $HOME/.backup/flatpak_backup.sh"
+alias backup_code_extensions="code --list-extensions | xargs -L 1 echo code --install-extension > $HOME/.config/Code/Backups/code_extensions.lst"
 alias mkdir='mkdir -p '
 # running a simple script that gets current weather... 
 # can be found at> https://github.com/PedroMarquetti/BasicJSConsumer
