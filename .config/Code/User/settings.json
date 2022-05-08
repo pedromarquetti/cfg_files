@@ -124,5 +124,7 @@
 	"python.formatting.provider": "autopep8",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python"
-	}
+	},
+	"errorLens.gutterIconsEnabled": true,
+	"errorLens.removeLinebreaks": false
 }
