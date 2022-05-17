@@ -1,6 +1,6 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/shell/enabled-extensions'
-saved-view='/org/gnome/shell/enabled-extensions'
+saved-pathbar-path='/org/gnome/GWeather4/speed-unit'
+saved-view='/org/gnome/GWeather4/speed-unit'
 show-warning=false
 window-height=814
 window-is-maximized=false
@@ -39,17 +39,40 @@ window-y=98
 
 [io/elementary/appcenter/settings]
 cached-drivers=@as []
-last-refresh-time=int64 1651144861
+last-refresh-time=int64 1652785780
 window-maximized=true
 window-position=(409, 171)
 window-size=(1100, 660)
+
+[org/gnome/GWeather]
+temperature-unit='centigrade'
+
+[org/gnome/GWeather4]
+speed-unit='kph'
+temperature-unit='centigrade'
+
+[org/gnome/Geary]
+migrated-config=true
 
 [org/gnome/Totem]
 active-plugins=['screensaver', 'variable-rate', 'autoload-subtitles', 'recent', 'rotation', 'apple-trailers', 'save-file', 'open-directory', 'mpris', 'skipto', 'screenshot', 'movie-properties', 'vimeo']
 subtitle-encoding='UTF-8'
 
+[org/gnome/Weather]
+locations=[<(uint32 2, <('Limeira, São Paulo', '', false, [(-0.39377257787108982, -0.82731688795990255)], [(-0.39663095943761695, -0.83163490234250648)])>)>]
+
+[org/gnome/baobab/ui]
+active-chart='rings'
+window-size=(1485, 797)
+window-state=87168
+
 [org/gnome/control-center]
-last-panel='desktop-dock'
+last-panel='wifi'
+
+[org/gnome/desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-magnifier-enabled=false
+screen-reader-enabled=false
 
 [org/gnome/desktop/a11y/magnifier]
 mouse-tracking='proportional'
@@ -63,10 +86,11 @@ xkb-options=@as []
 [org/gnome/desktop/interface]
 clock-format='24h'
 cursor-size=90
-text-scaling-factor=1.5
+text-scaling-factor=1.4803060619856541
+toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-evolution-alarm-notify', 'org-telegram-desktop']
+application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-evolution-alarm-notify', 'org-telegram-desktop', 'org-gnome-baobab', 'org-gnome-geary', 'org-gnome-fileroller', 'gimp', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell']
 show-banners=false
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
@@ -78,14 +102,32 @@ application-id='code.desktop'
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
 
+[org/gnome/desktop/notifications/application/gimp]
+application-id='gimp.desktop'
+
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
 
 [org/gnome/desktop/notifications/application/io-elementary-appcenter]
 application-id='io.elementary.appcenter.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-baobab]
+application-id='org.gnome.baobab.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-chromegnomeshell]
+application-id='org.gnome.ChromeGnomeShell.desktop'
+
 [org/gnome/desktop/notifications/application/org-gnome-evolution-alarm-notify]
 application-id='org.gnome.Evolution-alarm-notify.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-extensions-desktop]
+application-id='org.gnome.Extensions.desktop.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-fileroller]
+application-id='org.gnome.FileRoller.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-geary]
+application-id='org.gnome.Geary.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
@@ -101,6 +143,12 @@ numlock-state=true
 
 [org/gnome/desktop/privacy]
 report-technical-problems=false
+
+[org/gnome/desktop/screensaver]
+lock-delay=uint32 0
+
+[org/gnome/desktop/session]
+idle-delay=uint32 600
 
 [org/gnome/desktop/wm]
 close=['<Alt>F4']
@@ -119,15 +167,19 @@ switch-applications-backward=['<Shift><Alt>Tab']
 switch-group=['<Primary>apostrophe']
 switch-group-backward=['<Primary><Shift>apostrophe']
 
+[org/gnome/eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
+
 [org/gnome/evince/default]
-window-ratio=(1.0084712255258321, 0.7126568014219119)
+window-ratio=(0.97310924369747898, 0.65083135391923985)
 
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
 
 [org/gnome/evolution-data-server/calendar]
-reminders-past=['f6ec18874333f51594ef7d6f666b387f4fe6958f\n79e9662e7c7160a2f63d86165f6ffc394567ba86\t20220429\n1651136400\n1651190400\n1651276800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180429\r\nDTEND;VALUE=DATE:20180430\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=29;BYMONTH=4\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004681891795@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Thais Honoratto\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:0f22fd90fa7a4524bcb550e6417d007839d9d500\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:79e9662e7c7160a2f63d86165f6ffc394567ba86\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n8ec6d0d309d6746a36bb60abd568878870126371\t20220430\n1651017600\n1651276800\n1651449600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220430\r\nDTEND;VALUE=DATE:20220502\r\nDTSTAMP:20220131T182208Z\r\nUID:6a06685cfb16d3266b7592392df346c6ddd120b0\r\nCREATED:20220131T181413Z\r\nDESCRIPTION:<a __is_owner="true" href="https:\r\n //sites.usp.br/biotecnologia/area-aluno/ingresso/">ingresso<a/><br><br>\r\nLAST-MODIFIED:20220131T182208Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:13\r\nSTATUS:CONFIRMED\r\nSUMMARY:pós biotecnologia USP\r\nTRANSP:OPAQUE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63779336528\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:8aab628129dcb9d0cd9a35efa220d3c803b0d4f8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P3D\r\nX-EVOLUTION-ALARM-UID:8ec6d0d309d6746a36bb60abd568878870126371\r\nEND:VALARM\r\nEND:VEVENT\r\n']
+reminders-past=['f6ec18874333f51594ef7d6f666b387f4fe6958f\nc14066d61ab89e2b2049a68058dec6a8ef7657e5\t20220517\n1652778000\n1652745600\n1652832000\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180517\r\nDTEND;VALUE=DATE:20180518\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=17;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004031156300@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Willian Raphael\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:c14066d61ab89e2b2049a68058dec6a8ef7657e5\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:ff34309d5e81a402317b54c7bd1c9512786492d2\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n81808d140ce04eb6a0a32f24f9aef25a9a227cff\t20220517\n1652778000\n1652745600\n1652832000\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180517\r\nDTEND;VALUE=DATE:20180518\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=17;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100003148753335@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Andressa Rodrigues\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:81808d140ce04eb6a0a32f24f9aef25a9a227cff\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:96e84974d9065f7eef406fd21068b55fbd857c42\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n6b7d50d259ec4cf21f1abac207b33e0193f2b885\t20220518\n1652778000\n1652832000\n1652918400\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180518\r\nDTEND;VALUE=DATE:20180519\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=18;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100003247112896@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Anderson Armelin\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:a6f6032f9a5da87fbf59a706307aaaaa9ec73459\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:6b7d50d259ec4cf21f1abac207b33e0193f2b885\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\nff34309d5e81a402317b54c7bd1c9512786492d2\t20220517\n1652691600\n1652745600\n1652832000\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180517\r\nDTEND;VALUE=DATE:20180518\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=17;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004031156300@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Willian Raphael\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:c14066d61ab89e2b2049a68058dec6a8ef7657e5\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:ff34309d5e81a402317b54c7bd1c9512786492d2\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n96e84974d9065f7eef406fd21068b55fbd857c42\t20220517\n1652691600\n1652745600\n1652832000\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180517\r\nDTEND;VALUE=DATE:20180518\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=17;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100003148753335@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Andressa Rodrigues\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:81808d140ce04eb6a0a32f24f9aef25a9a227cff\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:96e84974d9065f7eef406fd21068b55fbd857c42\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n29bbc32e0b93eb50dd5cac9756bf9ebd13d71934\t20220511\n1652259600\n1652227200\n1652313600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180511\r\nDTEND;VALUE=DATE:20180512\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100002391024605@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Emirielli Fazanaro Pelosi\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:29bbc32e0b93eb50dd5cac9756bf9ebd13d71934\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:4d832b9ff119f1a5d545a0fafffa9a2e2719040f\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n4d832b9ff119f1a5d545a0fafffa9a2e2719040f\t20220511\n1652173200\n1652227200\n1652313600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180511\r\nDTEND;VALUE=DATE:20180512\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100002391024605@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Emirielli Fazanaro Pelosi\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:29bbc32e0b93eb50dd5cac9756bf9ebd13d71934\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:4d832b9ff119f1a5d545a0fafffa9a2e2719040f\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n0df93ad4feba8ab7fc0c3bf2bc93158672f3d8cb\t20220509\n1652086800\n1652054400\n1652140800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180509\r\nDTEND;VALUE=DATE:20180510\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=9;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b1515079876@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Giulia Helena Marchetti\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:0df93ad4feba8ab7fc0c3bf2bc93158672f3d8cb\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:30e3f644fe7d0636636a10ed51dc68ca2d48c82b\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n17927be9ca2988aa91a7211eb636f27f2beebdc8\t20220509\n1652086800\n1652054400\n1652140800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180509\r\nDTEND;VALUE=DATE:20180510\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=9;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100000205672053@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Gustavo Marchezin\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:17927be9ca2988aa91a7211eb636f27f2beebdc8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:ed45db4e9f6ae290cf2d5a2d3c33dac1a5e7b5c6\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n30e3f644fe7d0636636a10ed51dc68ca2d48c82b\t20220509\n1652000400\n1652054400\n1652140800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180509\r\nDTEND;VALUE=DATE:20180510\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=9;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b1515079876@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Giulia Helena Marchetti\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:0df93ad4feba8ab7fc0c3bf2bc93158672f3d8cb\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:30e3f644fe7d0636636a10ed51dc68ca2d48c82b\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\ned45db4e9f6ae290cf2d5a2d3c33dac1a5e7b5c6\t20220509\n1652000400\n1652054400\n1652140800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180509\r\nDTEND;VALUE=DATE:20180510\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=9;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100000205672053@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Gustavo Marchezin\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:17927be9ca2988aa91a7211eb636f27f2beebdc8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:ed45db4e9f6ae290cf2d5a2d3c33dac1a5e7b5c6\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n40df4cbf1a7f3276e7f0653e5a5ccbf08f69cf7a\t20220506\n1651827600\n1651795200\n1651881600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180506\r\nDTEND;VALUE=DATE:20180507\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=6;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100002500876478@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Lara Ferraciolli\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:40df4cbf1a7f3276e7f0653e5a5ccbf08f69cf7a\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:3ec421f73d3f4bade8aeb33bc843496531861ff9\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n3ec421f73d3f4bade8aeb33bc843496531861ff9\t20220506\n1651741200\n1651795200\n1651881600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180506\r\nDTEND;VALUE=DATE:20180507\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=6;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100002500876478@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Lara Ferraciolli\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:40df4cbf1a7f3276e7f0653e5a5ccbf08f69cf7a\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:3ec421f73d3f4bade8aeb33bc843496531861ff9\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n08f0e3a524c63181f8fc3aa5bf367cdefe951496\t20220504\n1651654800\n1651622400\n1651708800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180504\r\nDTEND;VALUE=DATE:20180505\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=4;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004527128777@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Gabriela Oliveira\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:08f0e3a524c63181f8fc3aa5bf367cdefe951496\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:0af2225d7478959ae3c48bc6fe9a2328aba06652\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n0af2225d7478959ae3c48bc6fe9a2328aba06652\t20220504\n1651568400\n1651622400\n1651708800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180504\r\nDTEND;VALUE=DATE:20180505\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=4;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004527128777@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Gabriela Oliveira\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:08f0e3a524c63181f8fc3aa5bf367cdefe951496\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:0af2225d7478959ae3c48bc6fe9a2328aba06652\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n5b8894e01173f3251e29c9e5f4dd6df66bee6de2\t20220502\n1651482000\n1651449600\n1651536000\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180502\r\nDTEND;VALUE=DATE:20180503\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=2;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100010550520536@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Lulu da Cruz\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:5b8894e01173f3251e29c9e5f4dd6df66bee6de2\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:98e311ab67510f8fd3e05fa04f74608cef430e52\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n98e311ab67510f8fd3e05fa04f74608cef430e52\t20220502\n1651395600\n1651449600\n1651536000\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180502\r\nDTEND;VALUE=DATE:20180503\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=2;BYMONTH=5\r\nDTSTAMP:20170731T141814Z\r\nUID:b100010550520536@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Lulu da Cruz\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:5b8894e01173f3251e29c9e5f4dd6df66bee6de2\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:98e311ab67510f8fd3e05fa04f74608cef430e52\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n0f22fd90fa7a4524bcb550e6417d007839d9d500\t20220429\n1651222800\n1651190400\n1651276800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180429\r\nDTEND;VALUE=DATE:20180430\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=29;BYMONTH=4\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004681891795@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Thais Honoratto\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:0f22fd90fa7a4524bcb550e6417d007839d9d500\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:79e9662e7c7160a2f63d86165f6ffc394567ba86\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n0053cbde5bfde8c960c1a28330cf4f79559d950e\t20220430\n1651222800\n1651276800\n1651363200\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180430\r\nDTEND;VALUE=DATE:20180501\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=30;BYMONTH=4\r\nDTSTAMP:20170731T141814Z\r\nUID:b100000520111268@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Pedro Marquetti\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:36fa7c65919a9ab42c64a3cf699259fd0974635d\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:0053cbde5bfde8c960c1a28330cf4f79559d950e\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n79e9662e7c7160a2f63d86165f6ffc394567ba86\t20220429\n1651136400\n1651190400\n1651276800\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20180429\r\nDTEND;VALUE=DATE:20180430\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=29;BYMONTH=4\r\nDTSTAMP:20170731T141814Z\r\nUID:b100004681891795@facebook.com\r\nCLASS:PUBLIC\r\nCREATED:20170731T141200Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for DESCRIPTION \r\n property. Removing entire property:\r\nLAST-MODIFIED:20170731T141814Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:0\r\nSTATUS:CONFIRMED\r\nSUMMARY:Aniversário de Thais Honoratto\r\nTRANSP:TRANSPARENT\r\nX-MICROSOFT-CDO-BUSYSTATUS:FREE\r\nX-EVOLUTION-CALDAV-ETAG:63637193894\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:PT9H\r\nX-EVOLUTION-ALARM-UID:0f22fd90fa7a4524bcb550e6417d007839d9d500\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-PT15H\r\nX-EVOLUTION-ALARM-UID:79e9662e7c7160a2f63d86165f6ffc394567ba86\r\nEND:VALARM\r\nEND:VEVENT\r\n', 'f6ec18874333f51594ef7d6f666b387f4fe6958f\n8ec6d0d309d6746a36bb60abd568878870126371\t20220430\n1651017600\n1651276800\n1651449600\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:20220430\r\nDTEND;VALUE=DATE:20220502\r\nDTSTAMP:20220131T182208Z\r\nUID:6a06685cfb16d3266b7592392df346c6ddd120b0\r\nCREATED:20220131T181413Z\r\nDESCRIPTION:<a __is_owner="true" href="https:\r\n //sites.usp.br/biotecnologia/area-aluno/ingresso/">ingresso<a/><br><br>\r\nLAST-MODIFIED:20220131T182208Z\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nSEQUENCE:13\r\nSTATUS:CONFIRMED\r\nSUMMARY:pós biotecnologia USP\r\nTRANSP:OPAQUE\r\nX-LIC-ERROR;X-LIC-ERRORTYPE=VALUE-PARSE-ERROR:No value for LOCATION \r\n property. Removing entire property:\r\nX-EVOLUTION-CALDAV-ETAG:63779336528\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P7D\r\nX-EVOLUTION-ALARM-UID:8aab628129dcb9d0cd9a35efa220d3c803b0d4f8\r\nEND:VALARM\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:This is an event reminder\r\nTRIGGER:-P3D\r\nX-EVOLUTION-ALARM-UID:8ec6d0d309d6746a36bb60abd568878870126371\r\nEND:VALARM\r\nEND:VEVENT\r\n']
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
@@ -147,7 +199,7 @@ active-plugins=['docinfo', 'sort', 'spell', 'openlinks', 'filebrowser', 'modelin
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/phlm/Documents/IR/IRPF2022'
+virtual-root='file:///home/phlm/Documents/stonks/Avenue'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -183,8 +235,8 @@ www=['<Super>b']
 command-history=['R', 'README.mr', 'r']
 disable-user-extensions=false
 disabled-extensions=['ubuntu-dock@ubuntu.com', 'cosmic-dock@system76.com']
-enabled-extensions=['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'dash2dock-lite@icedman.github.com']
-favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'org.gnome.Contacts.desktop', 'org.onlyoffice.desktopeditors.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
+enabled-extensions=['pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'text-scaler@gnome-shell-extensions.mariospr.org', 'dash2dock-lite@icedman.github.com']
+favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'com.github.Eloston.UngoogledChromium.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'com.discordapp.Discord.desktop', 'org.gnome.Contacts.desktop', 'org.onlyoffice.desktopeditors.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
 welcome-dialog-last-shown-version='42.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
@@ -227,6 +279,10 @@ switch-to-application-3=['<super>3']
 switch-to-application-4=['<super>4']
 toggle-overview=['<Super>w']
 
+[org/gnome/shell/weather]
+automatic-location=true
+locations=[<(uint32 2, <('Limeira, São Paulo', '', false, [(-0.39377257787108982, -0.82731688795990255)], [(-0.39663095943761695, -0.83163490234250648)])>)>]
+
 [org/gnome/system/location]
 enabled=false
 
@@ -237,10 +293,10 @@ location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=216
-sort-column='name'
+sidebar-width=285
+sort-column='modified'
 sort-directories-first=true
-sort-order='ascending'
+sort-order='descending'
 type-format='category'
-window-position=(373, 92)
-window-size=(1173, 890)
+window-position=(253, 90)
+window-size=(1414, 890)
