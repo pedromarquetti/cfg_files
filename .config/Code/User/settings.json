@@ -80,7 +80,7 @@
 		"scheme": "csi -script",
 		"ahk": "autohotkey",
 		"autoit": "autoit3",
-		"dart": "dart",
+		// "dart": "dart",
 		"pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
 		"d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
 		"haskell": "runhaskell",
@@ -108,6 +108,7 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": false
 	},
+	"dart.flutterHotReloadOnSave": "always",
 
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.startupEditor": "none",
@@ -126,5 +127,9 @@
 		"editor.defaultFormatter": "ms-python.python"
 	},
 	"errorLens.gutterIconsEnabled": true,
-	"errorLens.removeLinebreaks": false
+	"errorLens.removeLinebreaks": false,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"dart.hotReloadOnSave": "always",
+	"dart.debugExternalPackageLibraries": false,
+	"dart.debugSdkLibraries": false
 }
