@@ -128,8 +128,13 @@
 	},
 	"errorLens.gutterIconsEnabled": true,
 	"errorLens.removeLinebreaks": false,
+	"errorLens.scrollbarHackEnabled": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"dart.hotReloadOnSave": "always",
 	"dart.debugExternalPackageLibraries": false,
-	"dart.debugSdkLibraries": false
+	"dart.debugSdkLibraries": false,
+	"editor.unicodeHighlight.ambiguousCharacters": false,
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	}
 }
