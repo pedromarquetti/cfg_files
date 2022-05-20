@@ -42,5 +42,9 @@
 	{
 		"key": "ctrl+u ctrl+c",
 		"command": "editor.action.transformToUppercase"
+	},
+	{
+		"key": "ctrl+alt+w",
+		"command": "workbench.action.closePanel"
 	}
 ]
