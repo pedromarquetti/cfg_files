@@ -1,6 +1,6 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/GWeather4/speed-unit'
-saved-view='/org/gnome/GWeather4/speed-unit'
+saved-pathbar-path='/org/gnome/desktop/interface/cursor-size'
+saved-view='/org/gnome/desktop/interface/cursor-size'
 show-warning=false
 window-height=814
 window-is-maximized=false
@@ -39,7 +39,7 @@ window-y=98
 
 [io/elementary/appcenter/settings]
 cached-drivers=@as []
-last-refresh-time=int64 1652785780
+last-refresh-time=int64 1655813340
 window-maximized=true
 window-position=(409, 171)
 window-size=(1100, 660)
@@ -52,6 +52,8 @@ speed-unit='kph'
 temperature-unit='centigrade'
 
 [org/gnome/Geary]
+compose-as-html=true
+formatting-toolbar-visible=false
 migrated-config=true
 
 [org/gnome/Totem]
@@ -66,8 +68,23 @@ active-chart='rings'
 window-size=(1485, 797)
 window-state=87168
 
+[org/gnome/calculator]
+accuracy=9
+angle-units='degrees'
+base=10
+button-mode='basic'
+number-format='automatic'
+show-thousands=false
+show-zeroes=false
+source-currency=''
+source-units='degree'
+target-currency=''
+target-units='radian'
+window-position=(50, 104)
+word-size=64
+
 [org/gnome/control-center]
-last-panel='wifi'
+last-panel='mouse'
 
 [org/gnome/desktop/a11y/applications]
 screen-keyboard-enabled=false
@@ -85,12 +102,11 @@ xkb-options=@as []
 
 [org/gnome/desktop/interface]
 clock-format='24h'
-cursor-size=90
-text-scaling-factor=1.4803060619856541
+cursor-size=70
+text-scaling-factor=1.6151501140763274
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'org-gnome-terminal', 'code', 'firefox', 'io-elementary-appcenter', 'org-gnome-nautilus', 'ca-desrt-dconf-editor', 'org-gnome-evolution-alarm-notify', 'org-telegram-desktop', 'org-gnome-baobab', 'org-gnome-geary', 'org-gnome-fileroller', 'gimp', 'org-gnome-extensions-desktop', 'org-gnome-chromegnomeshell']
 show-banners=false
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
@@ -98,6 +114,9 @@ application-id='ca.desrt.dconf-editor.desktop'
 
 [org/gnome/desktop/notifications/application/code]
 application-id='code.desktop'
+
+[org/gnome/desktop/notifications/application/com-gexperts-tilix]
+application-id='com.gexperts.Tilix.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
@@ -107,6 +126,12 @@ application-id='gimp.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-network-panel]
+application-id='gnome-network-panel.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
 
 [org/gnome/desktop/notifications/application/io-elementary-appcenter]
 application-id='io.elementary.appcenter.desktop'
@@ -141,6 +166,10 @@ application-id='org.telegram.desktop.desktop'
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
 
+[org/gnome/desktop/peripherals/touchpad]
+natural-scroll=false
+two-finger-scrolling-enabled=true
+
 [org/gnome/desktop/privacy]
 report-technical-problems=false
 
@@ -172,11 +201,14 @@ background-color='rgb(0,0,0)'
 use-background-color=true
 
 [org/gnome/evince/default]
-window-ratio=(0.97310924369747898, 0.65083135391923985)
+window-ratio=(1.0403361344537816, 0.65083135391923985)
 
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
+
+[org/gnome/evolution-data-server/calendar]
+notify-completed-tasks=false
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
@@ -196,7 +228,7 @@ active-plugins=['docinfo', 'sort', 'spell', 'openlinks', 'filebrowser', 'modelin
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/phlm/Documents/stonks/Avenue'
+virtual-root='file:///home/phlm/Desktop'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -208,6 +240,9 @@ side-panel-size=200
 size=(900, 700)
 state=43908
 
+[org/gnome/mutter]
+edge-tiling=true
+
 [org/gnome/nautilus/icon-view]
 default-zoom-level='small'
 
@@ -216,6 +251,7 @@ default-folder-viewer='list-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
+initial-size=(948, 1010)
 maximized=true
 sidebar-width=321
 
@@ -233,7 +269,7 @@ command-history=['R', 'README.mr', 'r']
 disable-user-extensions=false
 disabled-extensions=['ubuntu-dock@ubuntu.com', 'cosmic-dock@system76.com']
 enabled-extensions=['pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'text-scaler@gnome-shell-extensions.mariospr.org', 'dash2dock-lite@icedman.github.com']
-favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'com.github.Eloston.UngoogledChromium.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'com.discordapp.Discord.desktop', 'org.gnome.Contacts.desktop', 'org.onlyoffice.desktopeditors.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
+favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'com.github.Eloston.UngoogledChromium.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'org.gnome.Contacts.desktop', 'com.discordapp.Discord.desktop', 'org.onlyoffice.desktopeditors.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
 welcome-dialog-last-shown-version='42.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
@@ -295,5 +331,5 @@ sort-column='modified'
 sort-directories-first=true
 sort-order='descending'
 type-format='category'
-window-position=(253, 92)
+window-position=(253, 95)
 window-size=(1414, 890)
