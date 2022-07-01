@@ -1,11 +1,22 @@
-# Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export WORDCHARS='*?_-.~=&;!#$%^' #ctrl+<- will treat these as part of the word
+# ~/Git folder will be used by znap
+if [[ ! -d ~/Git ]]; then
+    echo "Creating Git dir"
+    mkdir -p  ~/Git
+fi
+# Download Znap, if it's not there yet.
+if [[ ! -d ~/Git/zsh-snap ]]; then
+    echo "Downloading znap"
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+fi
+source ~/Git/zsh-snap/znap.zsh
 
-plugins=(
-    zsh-autocomplete # Slows down my shell startup, run git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete to install in oh my zsh
-    zsh-autosuggestions
-)
-source $ZSH/oh-my-zsh.sh
+# `znap source` automatically downloads and starts your plugins.
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+
 source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
 #######################
@@ -36,19 +47,14 @@ bindkey '^[[F' end-of-line                     # end
 bindkey '^[[Z' undo                            # shift + tab undo last action
 bindkey '^ '   autosuggest-accept	       # accept autosuggest with ctrl+space
 
-# enable completion features
-# autoload -Uz compinit
-# compinit -d ~/.cache/zcompdump
+# # enable completion features
+autoload -Uz compinit
+compinit -d ~/.cache/zcompdump
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
-## autocomplete config
+# ## autocomplete config
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -69,9 +75,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
-    RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
-
+    PROMPT='%F{green}%~ %F{white}%(!.#.$) '
+    RPROMPT='%F{green}%n%F{white}'
     #enable syntax-highlighting
     if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
         . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -191,7 +196,7 @@ fi
 
 #### custom aliases ayyy ####
 
-alias ll='ls -l'
+alias l='ls -l'
 alias la='ls -A'
 alias ls='ls -lt --color=auto'
 alias lss='ls -lah --color=auto'
@@ -232,9 +237,3 @@ alias backup_flatpak="flatpak list --columns=application --app | awk '{print "fl
 alias backup_code_extensions="code --list-extensions | xargs -L 1 echo code --install-extension > $HOME/.config/Code/Backups/code_extensions.lst"
 alias mkdir='mkdir -p '
 alias zoom_text="dconf write /org/gnome/desktop/interface/text-scaling-factor " # changes text scaling factor with a command
-
-# running a simple script that gets current weather... 
-# can be found at> https://github.com/PedroMarquetti/BasicJSConsumer
-# clone it and change file location
-# node ${HOME}/Documents/programming/js/weather/index.js
-
