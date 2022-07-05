@@ -229,7 +229,7 @@ alias doc='libreoffice --writer' #open doc file
 alias calc='libreoffice --calc'  #open calc (sheets)
 
 ### misc
-alias vim='vim -c "set number"' #show
+# alias vim='vim -c "set number"' #show
 alias nano='nano -l'            #line nums
 alias img='eog '                #img opener
 alias rm='rm -ri'               #recursive  & ask to remove
@@ -247,5 +247,6 @@ alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
 alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
 alias backup_flatpak="flatpak list --columns=application --app | awk '{print "flatpak install  --user \""$0"\" "}' > $HOME/.backup/flatpak_backup.sh"
 alias backup_code_extensions="code --list-extensions | xargs -L 1 echo code --install-extension > $HOME/.config/Code/Backups/code_extensions.lst"
+
 alias mkdir='mkdir -p '
 alias zoom_text="dconf write /org/gnome/desktop/interface/text-scaling-factor " # changes text scaling factor with a command
