@@ -31,41 +31,16 @@ print_cyan () {
 }
 
 setup_git(){
-    if [[ ! -f /usr/bin/git ]]; then
-        print_red "git not found! installing"
-        sudo apt update && sudo apt upgrade && sudo apt install git
-    else
-        print_green "git installed!"
-    fi 
-}
-
-install_ohmy(){
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-    print_cyan "installing zsh-autosuggestions"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
-
-    print_red "if any errors occured, try running manually"
-    sleep 2
+    [[ -f /usr/bin/git || -f /bin/git ]] ||
+        print_red "git not found! installing" 
+        sudo apt install git -y
 }
 
 install_zsh(){
-    if [[ ! -f /bin/zsh ]]; then
-        print_red "zsh not installed!"
-        print_cyan "installing zsh first..."
-        sudo apt install zsh --yes &&
-        sudo apt install zsh-syntax-highlighting
-        print_cyan "installing oh my zsh and plugins"
-        install_ohmy
-    else
-        print_green "zsh installed!"
-        if [[ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
-            print_red "oh my zsh not installed... installing now"
-            install_ohmy
-        else 
-            print_green "oh my zsh installed"
-        fi
-    fi
+    [[ -f /bin/zsh ]] ||
+        print_red "zsh not found, installing... "
+        sudo apt install zsh -y &&
+        sleep 1
 }
 config(){ # alias used to make it easier to work with these files
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
@@ -73,65 +48,56 @@ config(){ # alias used to make it easier to work with these files
 
 setup_env(){
     print_cyan "creating a bckp folder"
-    mkdir -p .dot-backup
+    mkdir -p $HOME/.dot-backup
     print_cyan "moving old zshrc from HOME"
-    if [[ -f $HOME/.zshrc ]]; then
-        mv $HOME/.zshrc $HOME/.dot-backup
-    fi
-    print_cyan "copying .config folder"
-    cp -r $HOME/.config $HOME/.dot-backup/.config-bckp
-    print_red "if any errors occured here, cloning the repo will probably fail, try doing it manually"
+    [[ -f $HOME/.zshrc ]] && 
+        mv $HOME/.zshrc $HOME/.dot-backup &&
+    
+    print_cyan "copying .config folder" &&
+    cp -r $HOME/.config $HOME/.dot-backup/.config-bckp &&
     sleep 5
 }
 
 install_code(){
-    if [[ ! -f /bin/code ]]; then
+    [[ -f /bin/code ]] || 
         print_red "vscode not found at /bin/code"
         print_cyan "installing"
+        sudo apt-get install wget gpg &&
+        wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg &&
+        sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ &&
+        sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' && 
+        rm -f packages.microsoft.gpg &&
+        sudo apt update &&
         sudo apt install code
-        print_green "done?"
-        if [[ ! -f /bin/code ]]; then
-            print_red "vscode not yet installed... apt install did not work... installing the repo from https://code.visualstudio.com/docs/setup/linux instructions..."
-            sleep 5
-            sudo apt-get install wget gpg &&
-            wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg &&
-            sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ &&
-            sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' &&
-            rm -f packages.microsoft.gpg &&
-            print_green "done... running apt install again."
-            sudo apt update &&
-            sudo apt install code
-        fi
-    fi
 }
 
 main(){
     print_cyan "Hi $(whoami), how are you?"
     print_cyan "Let's update everything first..."
     sudo apt update &&
-    sudo apt upgrade
+    sudo apt upgrade -y && 
+    print_cyan "Let's install git first"
+    setup_git &&
+    print_green "git installed"
+    print_cyan "now, checking if zsh is installed... "
+    install_zsh && 
+    print_green "zsh installed"
     print_cyan "and install vscode now"
-    install_code
+    # install_code && 
     print_green "vscode installed... yayyyy"
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
     print_red "----------"
     sleep 20
     print_green "ok, continuing..."
-    print_cyan "Making sure git is installed..."
-    setup_git
-    print_green "Git setup complete... continuing..."
-    print_cyan "Checking zsh and installing .oh-my-zsh"
-    install_zsh
-    print_cyan "zsh and oh my are now installed... setting up my configs"
-    setup_env
+    setup_env &&
     print_cyan "ok, getting my config files"
-    git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg
+    git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg && 
     print_green "Done"
-    config checkout
-    config config status.showUntrackedFiles no
-    chsh -s /bin/zsh 
-    print_cyan "maybe you'll need to reboot now"
+    config checkout &&
+    config config status.showUntrackedFiles no && 
+    chsh -s /bin/zsh &&
+    /bin/zsh
 }
 
 main
