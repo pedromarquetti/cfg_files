@@ -2,6 +2,8 @@ code --install-extension abusaidm.html-snippets
 code --install-extension albymor.increment-selection
 code --install-extension austin.code-gnu-global
 code --install-extension bungcip.better-toml
+code --install-extension Dart-Code.dart-code
+code --install-extension Dart-Code.flutter
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension eamodio.gitlens
@@ -23,7 +25,7 @@ code --install-extension oderwat.indent-rainbow
 code --install-extension PKief.material-icon-theme
 code --install-extension redhat.java
 code --install-extension ritwickdey.LiveServer
-code --install-extension rust-lang.rust
+code --install-extension rust-lang.rust-analyzer
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscjava.vscode-java-debug
