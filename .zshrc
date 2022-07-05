@@ -1,16 +1,29 @@
+# exporting these fix an error I was having with znap
+export XDG_DATA_HOME=$HOME/.local/share 
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
+
+export HISTSIZE=500000
+export SAVEHIST=1000  # Save most-recent 1000 lines
+export HISTFILE=$HOME/.zsh_history
 export WORDCHARS='*?_-.~=&;!#$%^' #ctrl+<- will treat these as part of the word
-# ~/Git folder will be used by znap
-if [[ ! -d ~/Git ]]; then
-    echo "Creating Git dir"
-    mkdir -p  ~/Git
-fi
+setopt SHARE_HISTORY # HISTFILE will be updated on each command sent 
+
+# Check if Git dir exists
+[[ -d ~/Git ]] || 
+    # || ==> right-side code will only exec if left side code == false
+    echo "Creating Git dir at ~" \ 
+    mkdir -p ~/Git
+
 # Download Znap, if it's not there yet.
-if [[ ! -d ~/Git/zsh-snap ]]; then
-    echo "Downloading znap"
+[[ -f ~/Git/zsh-snap/znap.zsh ]] || 
+    # explanation for this syntax: 
+    # https://unix.stackexchange.com/questions/24684/confusing-use-of-and-operators
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
-fi
+
 source ~/Git/zsh-snap/znap.zsh
+# set -vx 
 
 # `znap source` automatically downloads and starts your plugins.
 znap source marlonrichert/zsh-autocomplete
@@ -31,21 +44,21 @@ setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
 # configure key keybindings
-bindkey -e                                     # emacs key bindings
-bindkey '^K' kill-whole-line                   #kill whole line
-bindkey ' ' magic-space                        # do history expansion on space
-bindkey '^[[3;5~' kill-word                    # ctrl + delete -> kill word foward
-bindkey '^H' backward-kill-word                # kill word left of cursor << this key can vary
-# bindkey '^?' backward-kill-word              # if the above doesn't work, try this
-bindkey '^[[3~' delete-char                    # delete
-bindkey '^[[1;5C' forward-word                 # ctrl + ->
-bindkey '^[[1;5D' backward-word                # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history # page up
-bindkey '^[[6~' end-of-buffer-or-history       # page down
-bindkey '^[[H' beginning-of-line               # home
-bindkey '^[[F' end-of-line                     # end
-bindkey '^[[Z' undo                            # shift + tab undo last action
-bindkey '^ '   autosuggest-accept	       # accept autosuggest with ctrl+space
+bindkey -e                                      # emacs key bindings
+bindkey '^K' kill-whole-line                    # kill whole line
+bindkey ' ' magic-space                         # do history expansion on space
+bindkey '^[[3;5~' kill-word                     # ctrl + delete -> kill word foward
+bindkey '^H' backward-kill-word                 # kill word left of cursor << this key can vary
+# bindkey '^?' backward-kill-word               # if the above doesn't work, try this
+bindkey '^[[3~' delete-char                     # delete
+bindkey '^[[1;5C' forward-word                  # ctrl + ->
+bindkey '^[[1;5D' backward-word                 # ctrl + <-
+bindkey '^[[5~' beginning-of-buffer-or-history  # page up
+bindkey '^[[6~' end-of-buffer-or-history        # page down
+bindkey '^[[H' beginning-of-line                # home
+bindkey '^[[F' end-of-line                      # end
+bindkey '^[[Z' undo                             # shift + tab undo last action
+bindkey '^ '   autosuggest-accept	            # accept autosuggest with ctrl+space
 
 # # enable completion features
 autoload -Uz compinit
@@ -76,10 +89,10 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     PROMPT='%F{green}%~ %F{white}%(!.#.$) '
-    RPROMPT='%F{green}%n%F{white}'
+    RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
     #enable syntax-highlighting
-    if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
-        . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    if [[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  ||  -f $HOME/Git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+        # . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
         ZSH_HIGHLIGHT_STYLES[default]=none
         ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
@@ -125,7 +138,6 @@ if [ "$color_prompt" = yes ]; then
     fi
 else
     PROMPT='%F{green}%~ %F{white}%(!.#.\$) '
-    RPROMPT='%F{green}${debian_chroot:+($debian_chroot)}%n%F{white}'
 fi
 # unset color_prompt force_color_prompt
 
@@ -155,7 +167,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # enable auto-suggestions based on the history
-if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh || -f $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh || -f $HOME/Git/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     # . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     # change suggestion color
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
