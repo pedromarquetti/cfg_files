@@ -1,5 +1,6 @@
-flatpak install  --user "com.bitwarden.desktop" 
-flatpak install  --user "com.discordapp.Discord" 
-flatpak install  --user "com.spotify.Client" 
-flatpak install  --user "org.onlyoffice.desktopeditors" 
-flatpak install  --user "org.telegram.desktop" 
+#!/bin/bash
+
+[[ -d $HOME/.backup  ]] ||
+	mkdir $HOME/.backup
+echo "creating list of installed flatpak apps"
+flatpak list --columns=application --app | awk '{print "flatpak install  --user \""$0"\" "}' |tee $HOME/.backup/flatpak_backup.lst
