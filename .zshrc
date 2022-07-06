@@ -245,8 +245,5 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias ping='ping -c 6 ' #ping limiter
 alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
 alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
-alias backup_flatpak="flatpak list --columns=application --app | awk '{print "flatpak install  --user \""$0"\" "}' > $HOME/.backup/flatpak_backup.sh"
-alias backup_code_extensions="code --list-extensions | xargs -L 1 echo code --install-extension > $HOME/.config/Code/Backups/code_extensions.lst"
-
 alias mkdir='mkdir -p '
 alias zoom_text="dconf write /org/gnome/desktop/interface/text-scaling-factor " # changes text scaling factor with a command
