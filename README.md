@@ -8,34 +8,38 @@ I'll always be adding more stuff
 
 1. setup.sh _(work in proggress)_ with automated installation.
 2. .zshrc with my preferred aliases.
-3. .config with vscode config/settings/snippets and dconf settings 
-5. .backup containing crontab-install-scripts and UBlockOrigin backup file
+3. .config with vscode config/settings/snippets and dconf settings
+4. .backup containing crontab-install-scripts and UBlockOrigin backup file
 
 ## Setup
 
-1. For an automated setup just run:
+### For an automated setup just run:
 
 ```
-curl -L https://raw.githubusercontent.com/PedroMarquetti/cfg_files/master/.local/bin/setup.sh | bash
+curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local/bin/setup.sh | bash
 ```
 
-2. Or you could do it manually
+### For non-root users (you have to run the above first)
 
 ```
-git clone https://github.com/PedroMarquetti/cfg_files.git
+curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local/bin/setup_noroot.sh | bash
 ```
 
-and copy files manually
-
-3. To install my [list of VSCode extensions](https://github.com/PedroMarquetti/cfg_files/blob/08b38e9830382f88b1896c6309623591cbe8f69d/.config/Code/Backups/code_extensions.lst), run vscode first:
-
-`code .`
-
-then
+### Or you could do it manually
 
 ```
-cd $HOME/.config/Code/Backups
-chmod u+x $HOME/.config/Code/Backups/code_extensions.lst && $HOME/.config/Code/Backups/code_extensions.lst
+git clone https://github.com/pedromarquetti/cfg_files.git
+# mv cfg_files/<file/dir> ~
 ```
 
-some errors may occur, but you can always do it manually
+## Scripts
+
+Some useful script are located at `.local/bin`, they can be used to save your configs locally, my_cron_install and root_cron_install are useful crontabs I use to keep my system up to date
+
+## Backups
+
+At `.backup` and `.config/Code/Backups/`, there are some configs I use. The scripts mentioned above will update these configs
+
+## Issues
+
+Please report if you find any issues, I just learned Shell Scripting, so, errors are expected
