@@ -98,7 +98,7 @@ main(){
     config config status.showUntrackedFiles no && 
     [[ $SHELL != /bin/zsh ]] &&
         print_red "SHELL is not zsh... changing"
-        chsh -s /bin/zsh &&
+        chsh -s /bin/zsh 
     /bin/zsh
 }
 
