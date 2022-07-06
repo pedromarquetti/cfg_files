@@ -92,10 +92,10 @@ main(){
     print_green "ok, continuing..."
     setup_env &&
     print_cyan "ok, getting my config files"
-    git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg && 
+    git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg 
     print_green "Done"
-    config checkout &&
-    config config status.showUntrackedFiles no && 
+    config checkout 
+    config config status.showUntrackedFiles no 
     [[ $SHELL != /bin/zsh ]] &&
         print_red "SHELL is not zsh... changing"
         chsh -s $(which zsh) $(whoami)
