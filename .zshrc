@@ -1,4 +1,5 @@
 # exporting these fix an error I was having with znap
+#
 export XDG_DATA_HOME=$HOME/.local/share 
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
@@ -6,7 +7,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export HISTSIZE=500000
 export SAVEHIST=1000  # Save most-recent 1000 lines
 export HISTFILE=$HOME/.zsh_history
-export WORDCHARS='*?_-.~=&;!#$%^' #ctrl+<- will treat these as part of the word
+export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
 setopt SHARE_HISTORY # HISTFILE will be updated on each command sent 
 
 # Check if Git dir exists
