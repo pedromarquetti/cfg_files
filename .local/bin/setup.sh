@@ -83,7 +83,7 @@ main(){
     install_zsh && 
     print_green "zsh installed"
     print_cyan "and install vscode now"
-    # install_code && 
+    install_code && 
     print_green "vscode installed... yayyyy"
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
