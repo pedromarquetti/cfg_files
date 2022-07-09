@@ -57,11 +57,11 @@ function check_code(){
 setup_env(){
     print_cyan "creating backup of zshrc and .config"
     
-    mkdir -p $HOME/.dot-backup
-    [[ -f $HOME/.zshrc ]] && 
+    mkdir -p $HOME/.dot-backup/.config-bckp
+    [[ -f $HOME/.zshrc ]] &&
         print_cyan "moving old zshrc from HOME"
         mv $HOME/.zshrc $HOME/.dot-backup 
-    [[ -d $HOME/.config ]] && 
+    [[ -d $HOME/.config ]] &&
         print_cyan "copying .config folder" 
         cp -r $HOME/.config $HOME/.dot-backup/.config-bckp 
     sleep 5
@@ -90,7 +90,7 @@ main(){
     print_red "----------"
     sleep 20
     print_green "ok, continuing..."
-    setup_env &&
+    setup_env 
     print_cyan "ok, getting my config files"
     git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg 
     print_green "Done"
