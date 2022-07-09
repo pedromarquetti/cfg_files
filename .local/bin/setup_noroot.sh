@@ -65,7 +65,12 @@ setup_env(){
     fi
     if [[ -d $HOME/.config ]]; then
         print_cyan "copying .config folder" &&
-        cp -r $HOME/.config $HOME/.dot-backup/.config-bckp 
+        mv -v $HOME/.config $HOME/.dot-backup/.config-bckp 
+    fi
+    if [[ -d $HOME/.backup ]]; then
+        print_red "backup dir. found, moving it "
+        mv -v $HOME/.backup $HOME/.dot-backup
+
     fi
 }
 
