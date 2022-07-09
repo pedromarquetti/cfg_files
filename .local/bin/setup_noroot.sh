@@ -57,14 +57,14 @@ function check_code(){
 setup_env(){
     print_cyan "creating backup of zshrc and .config"
     
-    mkdir -p $HOME/.dot-backup/.config-bckp
+    mkdir -v -p $HOME/.dot-backup/.config-bckp
     [[ -f $HOME/.zshrc ]] &&
         print_cyan "moving old zshrc from HOME"
         mv $HOME/.zshrc $HOME/.dot-backup 
     [[ -d $HOME/.config ]] &&
         print_cyan "copying .config folder" 
         cp -r $HOME/.config $HOME/.dot-backup/.config-bckp 
-    sleep 5
+    
 }
 
 config(){ # alias used to make it easier to work with these files
@@ -77,13 +77,13 @@ main(){
     print_cyan "You need to have git installed and apt up to date..."
     print_cyan "Maybe run setup.sh first?"
     print_cyan "Let's check if you have git first..."
-    setup_git &&
+    setup_git 
     print_green "git installed"
     print_cyan "now, checking if zsh is installed... "
-    setup_zsh &&
+    setup_zsh 
     print_green "zsh installed"
     print_cyan "and let's check vscode now"
-    check_code && 
+    check_code 
     print_green "vscode installed... yayyyy"
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
