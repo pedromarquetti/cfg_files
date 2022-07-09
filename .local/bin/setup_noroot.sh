@@ -58,12 +58,12 @@ setup_env(){
     print_cyan "creating backup of zshrc and .config"
     
     mkdir -p $HOME/.dot-backup
-    print_cyan "moving old zshrc from HOME"
     [[ -f $HOME/.zshrc ]] && 
+        print_cyan "moving old zshrc from HOME"
         mv $HOME/.zshrc $HOME/.dot-backup 
-    
-    print_cyan "copying .config folder" &&
-    cp -r $HOME/.config $HOME/.dot-backup/.config-bckp &&
+    [[ -d $HOME/.config ]] && 
+        print_cyan "copying .config folder" 
+        cp -r $HOME/.config $HOME/.dot-backup/.config-bckp 
     sleep 5
 }
 
