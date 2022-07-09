@@ -70,8 +70,12 @@ setup_env(){
     if [[ -d $HOME/.backup ]]; then
         print_red "backup dir. found, moving it "
         mv -v $HOME/.backup $HOME/.dot-backup
-
     fi
+    if [[ -d $HOME/.cfg ]]; then   
+        print_red ".cfg dir. found, moving it "
+        mv -v $HOME/.cfg $HOME/.dot-backup
+    fi
+
 }
 
 config(){ # alias used to make it easier to work with these files
