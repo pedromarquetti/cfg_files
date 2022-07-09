@@ -59,10 +59,10 @@ setup_env(){
     
     mkdir -v -p $HOME/.dot-backup/.config-bckp
     [[ -f $HOME/.zshrc ]] &&
-        print_cyan "moving old zshrc from HOME"
+        print_cyan "moving old zshrc from HOME" &&
         mv $HOME/.zshrc $HOME/.dot-backup 
     [[ -d $HOME/.config ]] &&
-        print_cyan "copying .config folder" 
+        print_cyan "copying .config folder" &&
         cp -r $HOME/.config $HOME/.dot-backup/.config-bckp 
     
 }
