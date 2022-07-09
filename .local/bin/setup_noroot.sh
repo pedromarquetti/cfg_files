@@ -58,13 +58,15 @@ setup_env(){
     print_cyan "creating backup of zshrc and .config"
     
     mkdir -v -p $HOME/.dot-backup/.config-bckp
-    [[ -f $HOME/.zshrc ]] &&
+    if [[ -f $HOME/.zshrc ]]; then
+        
         print_cyan "moving old zshrc from HOME" &&
         mv $HOME/.zshrc $HOME/.dot-backup 
-    [[ -d $HOME/.config ]] &&
+    fi
+    if [[ -d $HOME/.config ]]; then
         print_cyan "copying .config folder" &&
         cp -r $HOME/.config $HOME/.dot-backup/.config-bckp 
-    
+    fi
 }
 
 config(){ # alias used to make it easier to work with these files
