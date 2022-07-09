@@ -57,7 +57,7 @@ function check_code(){
 setup_env(){
     print_cyan "creating backup of zshrc and .config"
     
-    mkdir -v -p $HOME/.dot-backup/.config-bckp
+    mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
     if [[ -f $HOME/.zshrc ]]; then
         
         print_cyan "moving old zshrc from HOME" &&
@@ -106,6 +106,13 @@ main(){
     git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg 
     print_green "Done"
     config checkout 
+    if [ $? = 0 ]; then                                                           √ visita
+        print_green "Checked out config.";
+    else
+        print_red "something happened, trying again"
+        print_cyan "Backing up pre-existing dot files.";
+        config checkout 2>&1 | egrep "^[\s+]" | awk {'print $1'} | xargs -I{} mv {} .dot-backup/{}
+    fi; 
     config config status.showUntrackedFiles no 
     [[ $SHELL != /bin/zsh ]] &&
         print_red "SHELL is not zsh... changing"
