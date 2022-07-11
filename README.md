@@ -32,6 +32,14 @@ git clone https://github.com/pedromarquetti/cfg_files.git
 # mv cfg_files/<file/dir> ~
 ```
 
+### Test on Docker container
+
+At `.docker/images/test`, run `cd .docker/images/test && docker build --no-cache -t root_scripttest/dotfiles .`
+
+Then `docker run -it root_scripttest/dotfiles`
+
+In there, you can safely run /setup.sh and setup_noroot.sh
+
 ## Scripts
 
 Some useful script are located at `.local/bin`, they can be used to save your configs locally, my_cron_install and root_cron_install are useful crontabs I use to keep my system up to date
