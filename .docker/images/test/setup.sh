@@ -52,7 +52,7 @@ setup_env(){
 
     print_cyan "moving old zshrc from HOME"
     if [[ -f $HOME/.zshrc ]]; then
-        mv $HOME/.zshrc $HOME/.dot-backup &&
+        mv $HOME/.zshrc $HOME/.dot-backup 
     fi
     if [[ -d $HOME/.config ]]; then
         print_cyan "copying .config folder" 

@@ -60,11 +60,11 @@ setup_env(){
     mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
     if [[ -f $HOME/.zshrc ]]; then
         
-        print_cyan "moving old zshrc from HOME" &&
+        print_cyan "moving old zshrc from HOME" 
         mv $HOME/.zshrc $HOME/.dot-backup 
     fi
     if [[ -d $HOME/.config ]]; then
-        print_cyan "copying .config folder" &&
+        print_cyan "copying .config folder" 
         mv -v $HOME/.config $HOME/.dot-backup/.config-bckp 
     fi
     if [[ -d $HOME/.backup ]]; then

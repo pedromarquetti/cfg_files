@@ -60,11 +60,11 @@ setup_env(){
     mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
     if [[ -f $HOME/.zshrc ]]; then
         
-        print_cyan "moving old zshrc from HOME" &&
+        print_cyan "moving old zshrc from HOME" 
         mv $HOME/.zshrc $HOME/.dot-backup 
     fi
     if [[ -d $HOME/.config ]]; then
-        print_cyan "copying .config folder" &&
+        print_cyan "copying .config folder" 
         mv -v $HOME/.config $HOME/.dot-backup/.config-bckp 
     fi
     if [[ -d $HOME/.backup ]]; then
@@ -79,7 +79,7 @@ setup_env(){
 }
 
 config(){ # alias used to make it easier to work with these files
-    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@ ; 
 }
 
 main(){
@@ -105,13 +105,13 @@ main(){
     print_cyan "ok, getting my config files"
     git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg 
     print_green "Done"
-    config checkout 
-    if [ $? = 0 ]; then                                                           √ visita
+    config checkout ;
+    if [ $? = 0 ]; then 
         print_green "Checked out config.";
     else
         print_red "something happened, trying again"
         print_cyan "Backing up pre-existing dot files.";
-        config checkout 2>&1 | egrep "^[\s+]" | awk {'print $1'} | xargs -I{} mv {} .dot-backup/{}
+        config checkout 2>&1 | egrep "^[\s+]" | awk {'print $1'} | xargs -I{} mv -v {} .dot-backup/{}
     fi; 
     config config status.showUntrackedFiles no 
     [[ $SHELL != /bin/zsh ]] &&
