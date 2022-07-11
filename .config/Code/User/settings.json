@@ -136,5 +136,6 @@
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
-	}
+	},
+	"javascript.updateImportsOnFileMove.enabled": "always"
 }
