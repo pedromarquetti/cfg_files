@@ -48,18 +48,29 @@ config(){ # alias used to make it easier to work with these files
 
 setup_env(){
     print_cyan "creating a bckp folder"
-    mkdir -p $HOME/.dot-backup
+    mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
+
     print_cyan "moving old zshrc from HOME"
-    [[ -f $HOME/.zshrc ]] && 
+    if [[ -f $HOME/.zshrc ]]; then
         mv $HOME/.zshrc $HOME/.dot-backup &&
-    
-    print_cyan "copying .config folder" &&
-    cp -r $HOME/.config $HOME/.dot-backup/.config-bckp &&
-    sleep 5
+    fi
+    if [[ -d $HOME/.config ]]; then
+        print_cyan "copying .config folder" &&
+        mv -v $HOME/.config $HOME/.dot-backup/.config-bckp 
+    fi
+    if [[ -d $HOME/.backup ]]; then
+        print_red "backup dir. found, moving it "
+        mv -v $HOME/.backup $HOME/.dot-backup
+    fi
+    if [[ -d $HOME/.cfg ]]; then   
+        print_red ".cfg dir. found, moving it "
+        mv -v $HOME/.cfg $HOME/.dot-backup
+    fi
+
 }
 
-install_code(){
-    [[ -f /bin/code ]] || 
+function install_code(){
+    if [[ ! -f /bin/code ]]; then
         print_red "vscode not found at /bin/code"
         print_cyan "installing"
         sudo apt-get install -y wget gpg &&
@@ -69,6 +80,8 @@ install_code(){
         rm -f packages.microsoft.gpg &&
         sudo apt update &&
         sudo apt install -y code
+    fi
+    
 }
 
 main(){
