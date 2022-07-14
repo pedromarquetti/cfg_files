@@ -37,10 +37,11 @@ setup_git(){
 }
 
 install_zsh(){
-    [[ -f /bin/zsh ]] ||
+    if [[ ! -f /bin/zsh ]]; then
         print_red "zsh not found, installing... "
         sudo apt install zsh -y &&
         sleep 1
+    fi
 }
 config(){ # alias used to make it easier to work with these files
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
@@ -89,6 +90,7 @@ main(){
     print_cyan "Let's update everything first..."
     sudo apt update &&
     sudo apt upgrade -y && 
+    sudo apt install -y htop &&
     print_cyan "Let's install git first"
     setup_git &&
     print_green "git installed"
@@ -108,6 +110,13 @@ main(){
     git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg && 
     print_green "Done"
     config checkout &&
+    if [ $? = 0 ]; then
+        print_green "Checked out config.";
+        else
+            print_red "something happened, trying again"
+            print_cyan "Backing up pre-existing dot files.";
+            config checkout 2>&1 | egrep "^[\s+]" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
+    fi;
     config config status.showUntrackedFiles no && 
     chsh -s /bin/zsh &&
     /bin/zsh
