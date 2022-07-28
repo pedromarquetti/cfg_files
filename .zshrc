@@ -149,7 +149,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
+    alias grep='grep -n -B 2 -A 2  --color=auto '
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
     alias diff='diff --color=auto'
@@ -248,3 +248,4 @@ alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
 alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
 alias mkdir='mkdir -p '
 alias zoom_text="dconf write /org/gnome/desktop/interface/text-scaling-factor " # changes text scaling factor with a command
+
