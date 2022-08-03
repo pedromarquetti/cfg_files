@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CRON="@reboot   (date && echo '\napt update>> \n\n' && apt update && echo 'apt upgrade>>\n\n' && apt --yes upgrade && echo 'autoremove>>\n\n' && apt --yes autoremove && echo '\n') >> /var/log/autoupdates.log"
+CRON="@reboot   (date && echo '\napt update>> \n\n' && apt update && echo 'apt upgrade>>\n\n' && apt upgrade -y && echo 'autoremove>>\n\n' && apt --yes autoremove && echo '\n') >> /var/log/autoupdates.log"
 
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
