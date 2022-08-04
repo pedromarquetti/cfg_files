@@ -70,6 +70,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab
 # ## autocomplete config
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
+# Wait this many seconds for typing to stop, before showing completions.
+zstyle ':autocomplete:*' min-delay 0.01  # seconds (float)
+
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm-color | *-256color) color_prompt=yes ;;
