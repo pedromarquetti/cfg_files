@@ -28,13 +28,15 @@ filetype indent on
 syntax on
 
 " Add numbers to the file.
+
 set number
 
 " Highlight cursor line underneath the cursor horizontally.
 
 set cursorline
 
-hi CursorLine cterm=NONE ctermbg=242
+" hi CursorLine cterm=NONE ctermbg=242
+hi CursorLine cterm=NONE ctermbg=8
 
 " Highlight cursor line underneath the cursor vertically.
 set cursorcolumn
