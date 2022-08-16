@@ -24,6 +24,9 @@ filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
 
+" add auto indent 
+set autoindent
+
 " Turn syntax highlighting on.
 syntax on
 
@@ -118,6 +121,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
 
 " Set the backslash as the leader key.
 @REM let mapleader = "\"
