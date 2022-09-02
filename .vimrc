@@ -9,6 +9,7 @@
 "idea from https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
 
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -117,6 +118,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
+inoremap < <><left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
