@@ -38,7 +38,8 @@
 	"git.confirmSync": false,
 	"files.associations": {
 		"*.html": "html",
-		"*.json": "jsonc"
+		"*.json": "jsonc",
+		"*.rmd": "markdown"
 	},
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"code-runner.runInTerminal": true,

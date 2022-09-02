@@ -83,5 +83,20 @@
 		"key": "ctrl+k ctrl+0",
 		"command": "-editor.foldAll",
 		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "-r.runSelection",
+		"when": "editorTextFocus && editorLangId == 'r'"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "-breadcrumbs.revealFocused",
+		"when": "breadcrumbsActive && breadcrumbsVisible"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "-r.runSelection",
+		"when": "editorTextFocus && editorLangId == 'rmd'"
 	}
 ]
