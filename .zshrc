@@ -1,5 +1,5 @@
 # exporting these fix an error I was having with znap
-#
+
 export XDG_DATA_HOME=$HOME/.local/share 
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
@@ -7,12 +7,13 @@ export XDG_CONFIG_HOME=$HOME/.config
 export HISTSIZE=500000
 export SAVEHIST=1000  # Save most-recent 1000 lines
 export HISTFILE=$HOME/.zsh_history
-export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
+export WORDCHARS='*?_.~=&;!#$%^' # ctrl+<-(or backspace/del) will treat these as part of the word
 setopt SHARE_HISTORY # HISTFILE will be updated on each command sent 
 
 # Check if Git dir exists
 [[ -d ~/Git ]] || 
     # || ==> right-side code will only exec if left side code == false
+    # ^ if [[ ! -d ~/Git ]]...
     echo "Creating Git dir at ~" \ 
     mkdir -p ~/Git
 
@@ -64,15 +65,15 @@ bindkey '^ '   autosuggest-accept	            # accept autosuggest with ctrl+spa
 # # enable completion features
 autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
-zstyle ':completion:*:*:*:*:*' menu select
+# commented the line below because autocomplete was not working
+# zstyle ':completion:*:*:*:*:*' menu yes select 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 # ## autocomplete config
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # Wait this many seconds for typing to stop, before showing completions.
-zstyle ':autocomplete:*' min-delay 0.01  # seconds (float)
-
+zstyle ':autocomplete:*' min-delay 0.05  # seconds (float)
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
