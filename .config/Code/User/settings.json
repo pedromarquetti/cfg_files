@@ -6,10 +6,11 @@
 	"python.languageServer": "Pylance",
 	"window.autoDetectColorScheme": true,
 	"python.analysis.completeFunctionParens": true,
-	"prettier.jsxBracketSameLine": true,
 	"prettier.jsxSingleQuote": true,
 	"editor.suggestSelection": "first",
 	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
 	"indentRainbow.colorOnWhiteSpaceOnly": true,
 	"editor.tokenColorCustomizations": {
 		"variables": "#FFFF00",
@@ -98,7 +99,15 @@
 		"fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
 	},
 	"editor.wordWrap": "on",
-
+	"[r]": {
+		"editor.defaultFormatter": "REditorSupport.r"
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	},
 	"[dart]": {
 		"editor.formatOnSave": true,
 		"editor.formatOnType": true,
@@ -109,8 +118,6 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": false
 	},
-	"dart.flutterHotReloadOnSave": "always",
-
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.startupEditor": "none",
 	"editor.mouseWheelZoom": true,
@@ -119,25 +126,20 @@
 	"extensions.ignoreRecommendations": true,
 	"editor.unicodeHighlight.invisibleCharacters": false,
 	"eslint.alwaysShowStatus": true,
-	"git.ignoredRepositories": ["/home/phlm/.oh-my-zsh"],
 	"scm.alwaysShowActions": true,
 	"prettier.useTabs": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"python.formatting.provider": "autopep8",
-	"[python]": {
-		"editor.defaultFormatter": "ms-python.python"
-	},
 	"errorLens.gutterIconsEnabled": true,
 	"errorLens.removeLinebreaks": false,
 	"errorLens.scrollbarHackEnabled": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
-	"dart.hotReloadOnSave": "always",
+	"dart.hotReloadOnSave": "all",
+	"dart.flutterHotReloadOnSave": "all",
 	"dart.debugExternalPackageLibraries": true,
 	"dart.debugSdkLibraries": false,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
-	"[rust]": {
-		"editor.defaultFormatter": "rust-lang.rust-analyzer"
-	},
+
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
