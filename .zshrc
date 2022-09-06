@@ -202,7 +202,8 @@ function updater() {
     flatpak uninstall --unused
 
 }
-#fix for an TILIX error i was having
+
+# fix for an TILIX error i was having
 if [[ ! -f /etc/profile.d/vte.sh ]]; then
 	echo "/etc/profile.d/vte.sh not found!!! tilix will throw an err... "
 	echo "running 'sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh'"
@@ -230,27 +231,22 @@ alias gstats="git status"
 alias gadd="git add"
 alias gcommit="git commit"
 
-### docs
-alias doc='libreoffice --writer' #open doc file
-alias calc='libreoffice --calc'  #open calc (sheets)
 
 ### misc
-# alias vim='vim -c "set number"' #show
-alias nano='nano -l'            #line nums
-alias img='eog '                #img opener
-alias rm='rm -ri'               #recursive  & ask to remove
-alias rmf='rm -rf '             # recursive force -- caution
-alias whois='whois -H'          #hides legal stuff
+# alias vim='vim -c "set number"'   #show
+alias nano='nano -l'                # line nums
+alias img='eog '                    # img opener
+alias rm='rm -ri'                   # recursive  & ask to remove
+alias rmf='rm -rf '                 # recursive force -- caution
+alias whois='whois -H'              # hides legal stuff
 alias myip='python3 /home/phlm/Documents/programming/python/my_ip/my_ip.py'
-alias open='gio open 2>/dev/null '
+alias open='gio open 2>/dev/null '  # open with default app
 alias py='python3'
-alias vpnstat='curl https://www.cloudflare.com/cdn-cgi/trace/'
-alias firefox="firefox 2>/dev/null"
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
-alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
-alias ping='ping -c 6 ' #ping limiter
-alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
-alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
+alias ping='ping -c 6 '             # ping limiter
 alias mkdir='mkdir -p '
-alias zoom_text="dconf write /org/gnome/desktop/interface/text-scaling-factor " # changes text scaling factor with a command
 
+# dotfile commands
+alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
+alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
+alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
