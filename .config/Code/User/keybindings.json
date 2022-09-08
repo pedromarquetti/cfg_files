@@ -98,5 +98,17 @@
 		"key": "ctrl+enter",
 		"command": "-r.runSelection",
 		"when": "editorTextFocus && editorLangId == 'rmd'"
+	},
+	{
+		"key": "ctrl+alt+shift+f",
+		"command": "workbench.action.findInFiles"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "explorer.newFolder"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-workbench.action.findInFiles"
 	}
 ]
