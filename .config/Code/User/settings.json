@@ -137,7 +137,7 @@
 	"dart.hotReloadOnSave": "all",
 	"dart.flutterHotReloadOnSave": "all",
 	"dart.debugExternalPackageLibraries": true,
-	"dart.debugSdkLibraries": false,
+	"dart.debugSdkLibraries": true,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 
 	"javascript.updateImportsOnFileMove.enabled": "always",
