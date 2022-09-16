@@ -105,13 +105,13 @@ main(){
     print_cyan "ok, getting my config files"
     git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg 
     print_green "Done"
-    config checkout ;
+    config checkout
     if [ $? = 0 ]; then 
-        print_green "Checked out config.";
+        print_green "Checked out config."
     else
         print_red "something happened, trying again"
         print_cyan "Backing up pre-existing dot files.";
-        config checkout 2>&1 | egrep "^[\s+]" | awk {'print $1'} | xargs -I{} mv -v {} .dot-backup/{}
+        config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v {} .dot-backup/{}
     fi; 
     config config status.showUntrackedFiles no 
     [[ $SHELL != /bin/zsh ]] &&
