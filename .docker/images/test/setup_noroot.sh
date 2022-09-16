@@ -59,7 +59,6 @@ setup_env(){
     
     mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
     if [[ -f $HOME/.zshrc ]]; then
-        
         print_cyan "moving old zshrc from HOME" 
         mv $HOME/.zshrc $HOME/.dot-backup 
     fi
@@ -111,7 +110,7 @@ main(){
     else
         print_red "something happened, trying again"
         print_cyan "Backing up pre-existing dot files.";
-        config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v {} .dot-backup/{}
+        config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v $HOME{} $HOME.dot-backup/{}
     fi; 
     config config status.showUntrackedFiles no 
     [[ $SHELL != /bin/zsh ]] &&
