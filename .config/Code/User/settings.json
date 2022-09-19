@@ -143,5 +143,6 @@
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
-	"emmet.useInlineCompletions": true
+	"emmet.useInlineCompletions": true,
+	"editor.inlayHints.enabled": "off"
 }
