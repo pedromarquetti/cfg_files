@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# setting XDG vars
+# for some reason my XDG variables were not being set properly after switching from a super-user to a non su
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
+
 set -e
 
 declare -rA COLORS=(

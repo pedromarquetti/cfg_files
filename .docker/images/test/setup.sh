@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# setting XDG vars
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
+
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
     [GREEN]=$'\033[0;32m'
@@ -115,7 +121,7 @@ main(){
         else
             print_red "something happened, trying again"
             print_cyan "Backing up pre-existing dot files.";
-            config checkout 2>&1 | egrep "^[\s+]" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
+            config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
     fi;
     config config status.showUntrackedFiles no && 
     chsh -s /bin/zsh &&
