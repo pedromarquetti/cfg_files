@@ -14,6 +14,8 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 # setopt share_history        # share command history data
 
+export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
+
 # custom prompt
 PROMPT='%F{green}%~ %F{white}%(!.#.$) '
 RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
