@@ -110,5 +110,15 @@
 	{
 		"key": "ctrl+shift+f",
 		"command": "-workbench.action.findInFiles"
+	},
+	{
+		"key": "ctrl+shift+space",
+		"command": "editor.action.triggerParameterHints",
+		"when": "editorHasSignatureHelpProvider && editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+space",
+		"command": "-editor.action.triggerParameterHints",
+		"when": "editorHasSignatureHelpProvider && editorTextFocus"
 	}
 ]
