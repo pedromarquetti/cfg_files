@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CRON="@reboot   (date && echo '\nupdate\n' && flatpak -y update && echo '\nupgrade\n\n' && flatpak -y upgrade && echo '\n') >> /home/$(whoami)/.local/logs/flatpak/autoupdate.log"
+CRON="@reboot /bin/bash $HOME/.local/bin/flatpak_updater.sh"
+
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
     [GREEN]=$'\033[0;32m'
