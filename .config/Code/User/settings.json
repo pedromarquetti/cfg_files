@@ -108,6 +108,7 @@
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
 	},
+
 	"[dart]": {
 		"editor.formatOnSave": true,
 		"editor.formatOnType": true,
@@ -139,7 +140,6 @@
 	"dart.debugExternalPackageLibraries": true,
 	"dart.debugSdkLibraries": true,
 	"editor.unicodeHighlight.ambiguousCharacters": false,
-
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
