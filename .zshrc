@@ -217,7 +217,7 @@ alias myip='python3 /home/phlm/Documents/programming/python/my_ip/my_ip.py'
 alias open='gio open 2>/dev/null '  # open with default app
 alias py='python3'
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
-alias ping='ping -c 6 '             # ping limiter
+alias ping='ping -c 10'             # ping limiter
 alias mkdir='mkdir -p '
 
 # dotfile commands
