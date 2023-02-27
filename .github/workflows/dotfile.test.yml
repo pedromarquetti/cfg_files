@@ -5,13 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
-      - name: Run
-        shell: bash
-
+      - name: Run Setup Script
         run: |
-          echo "running on $PWD"
+          chmod +x ./local/bin/setup.sh
           ./local/bin/setup.sh
-
-        env:
-          DOTFILES_REF: ${{github.sha}}
-          REPO: ${{github.workspace}}
+        shell: bash
