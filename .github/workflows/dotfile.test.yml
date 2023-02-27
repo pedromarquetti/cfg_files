@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@master
+      - name: Run
+        shell: bash
+        run: |
+          ./local/bin/setup.sh
+        env:
+          DOTFILES_REF: ${{github.sha}}
+          REPO: ${{github.workspace}}
