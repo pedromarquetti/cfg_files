@@ -103,7 +103,8 @@
 		"editor.defaultFormatter": "REditorSupport.r"
 	},
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.python"
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.formatOnType": true
 	},
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -144,5 +145,7 @@
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.useInlineCompletions": true,
-	"editor.inlayHints.enabled": "off"
+	"editor.inlayHints.enabled": "off",
+	"r.plot.useHttpgd": true,
+	"liveServer.settings.donotShowInfoMsg": true
 }
