@@ -124,7 +124,7 @@ main(){
             config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
     fi;
     config config status.showUntrackedFiles no && 
-    chsh -s /bin/zsh &&
+    print_yellow "change shell with chsh -s /bin/zsh, then login again!"
     /bin/zsh
 }
 
