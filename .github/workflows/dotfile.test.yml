@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  build:
+  run-setup-sh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.3.0
@@ -9,4 +9,6 @@ jobs:
         run: |
           chmod +x ./.local/bin/setup.sh
           ./.local/bin/setup.sh
+          echo "finished running setup.sh"
+          ls -lah ~
         shell: bash
