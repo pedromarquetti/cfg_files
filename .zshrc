@@ -165,6 +165,8 @@ function updater() {
     flatpak -y upgrade &&
     printf "${RED}remove unused?:${NC} \n" &&
     flatpak uninstall --unused
+    printf "${RED}updating znap\n" &&
+    znap pull
 
 }
 
