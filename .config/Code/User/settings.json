@@ -19,7 +19,13 @@
 	"workbench.colorCustomizations": {
 		"editorLineNumber.foreground": "#ffffff3d",
 		"editorLineNumber.activeForeground": "#ffffffd0",
-		"editor.lineHighlightBorder": "#6868683f"
+		"editor.lineHighlightBorder": "#8f8f8fa2",
+		// code suggestion menu
+		"editorSuggestWidget.background": "#0c0e15",
+		"editorSuggestWidget.border": "#ffffff4c",
+		"editorSuggestWidget.foreground": "#868faf",
+		"editorSuggestWidget.highlightForeground": "#87d6ce",
+		"editorSuggestWidget.selectedBackground": "#33374a"
 	},
 	"workbench.colorTheme": "Community Material Theme Ocean High Contrast",
 	"editor.guides.bracketPairs": true,
