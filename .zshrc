@@ -76,7 +76,7 @@ autoload -Uz compinit
 # compinit -d ~/.cache/zcompdump
 compinit -u
 # commented the line below because autocomplete was not working
-# zstyle ':completion:*:*:*:*:*' menu yes select 
+zstyle ':completion:*:*:*:*:*' menu yes select 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 # autocomplete config
