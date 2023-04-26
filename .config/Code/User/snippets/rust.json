@@ -1,7 +1,7 @@
 {
-	// Place your snippets for rust here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// Place your snippets for rust here. Each snippet is defined under a snippet name and has a prefix, body and
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
 	// same ids are connected.
 	// Example:
 	// "Print to console": {
@@ -12,16 +12,12 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"New Function":{
+	"New Function": {
 		"description": "Creates new function",
-		"body": [
-			"fn $1($2){",
-			"\t$0",
-			"}"
-		],
-		"prefix": "func"
+		"body": ["fn $1($2)-> $3{", "\t$0", "}"],
+		"prefix": "fn"
 	},
-	"Elif statement":{
+	"Elif statement": {
 		"description": "Creates if statement with 'else if'",
 		"body": [
 			"if $1 {",
@@ -34,24 +30,14 @@
 		],
 		"prefix": "elif"
 	},
-	"if else statement":{
+	"if else statement": {
 		"description": "Creates if statement with 'else'",
-		"body": [
-			"if $1 {",
-			"\t$2",
-			"} else {",
-			"\t$0",
-			"}"
-		],
+		"body": ["if $1 {", "\t$2", "} else {", "\t$0", "}"],
 		"prefix": "else"
 	},
-	"Struct":{
+	"Struct": {
 		"description": "Simple struct {} generator",
-		"body": [
-			"struct $1 {",
-			"\t$0,",
-			"}"
-		],
+		"body": ["struct $1 {", "\t$2:$3,", "\t$0", "}"],
 		"prefix": "str"
 	}
 }
