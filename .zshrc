@@ -224,6 +224,6 @@ alias ping='ping -c 10'             # ping limiter
 alias mkdir='mkdir -p '
 
 # dotfile commands
-alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
+alias backup_dconf="dconf dump / > $HOME/.backup/backup.dconf"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
