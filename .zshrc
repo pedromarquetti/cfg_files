@@ -226,4 +226,4 @@ alias mkdir='mkdir -p '
 # dotfile commands
 alias backup_dconf="dconf dump / > $HOME/.config/backup.dconf"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
-alias dconf_restore="dconf load / < $HOME/.config/backup.dconf"
+alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
