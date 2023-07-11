@@ -113,7 +113,7 @@ main(){
     print_green "ok, continuing..."
     setup_env &&
     print_cyan "ok, getting my config files"
-    git clone --bare https://github.com/PedroMarquetti/cfg_files.git $HOME/.cfg && 
+    git clone --bare https://github.com/pedromarquetti/cfg_files.git $HOME/.cfg && 
     print_green "Done"
     config checkout &&
     if [ $? = 0 ]; then
