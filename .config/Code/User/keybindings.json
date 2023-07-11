@@ -20,11 +20,11 @@
 		"command": "workbench.action.terminal.newInActiveWorkspace"
 	},
 	{
-		"key": "ctrl+alt+=",
+		"key": "ctrl+=",
 		"command": "editor.action.fontZoomIn"
 	},
 	{
-		"key": "ctrl+alt+[Minus]",
+		"key": "ctrl+-",
 		"command": "editor.action.fontZoomOut"
 	},
 	{
@@ -130,5 +130,21 @@
 		"key": "ctrl+o",
 		"command": "-workbench.action.files.openFolderViaWorkspace",
 		"when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+	},
+	{
+		"key": "ctrl+alt+=",
+		"command": "workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+=",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+alt+[Minus]",
+		"command": "workbench.action.zoomOut"
+	},
+	{
+		"key": "ctrl+-",
+		"command": "-workbench.action.zoomOut"
 	}
 ]
