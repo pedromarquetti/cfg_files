@@ -39,5 +39,10 @@
 		"description": "Simple struct {} generator",
 		"body": ["struct $1 {", "\t$2:$3,", "\t$0", "}"],
 		"prefix": "str"
+	},
+	"Derive Generator": {
+		"body": "#[derive($0)]",
+		"prefix": "derive",
+		"description": "helper for writing derives because i'm lazy"
 	}
 }

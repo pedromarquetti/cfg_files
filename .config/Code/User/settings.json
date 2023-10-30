@@ -27,13 +27,13 @@
 		"editorSuggestWidget.highlightForeground": "#87d6ce",
 		"editorSuggestWidget.selectedBackground": "#33374a"
 	},
-	"workbench.colorTheme": "Community Material Theme Ocean High Contrast",
 	"editor.guides.bracketPairs": true,
 	"editor.autoClosingBrackets": "always",
 	"editor.autoClosingDelete": "always",
 	"editor.autoClosingOvertype": "always",
 	"emmet.includeLanguages": {
-		"javascript": "javascriptreact"
+		"javascript": "javascriptreact",
+		"rust": "html"
 	},
 	"files.saveConflictResolution": "overwriteFileOnDisk",
 	"editor.linkedEditing": true,
@@ -50,7 +50,7 @@
 	},
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"code-runner.runInTerminal": true,
-	"python.defaultInterpreterPath": "/bin/python3",
+	"python.defaultInterpreterPath": "/home/phlm/Documents/programming/python/jobscraper/.env",
 	"code-runner.executorMap": {
 		"javascript": "node",
 		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -129,7 +129,6 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.startupEditor": "none",
 	"editor.mouseWheelZoom": true,
-	"window.zoomLevel": 1,
 	"editor.autoClosingQuotes": "always",
 	"extensions.ignoreRecommendations": true,
 	"editor.unicodeHighlight.invisibleCharacters": false,
@@ -153,5 +152,12 @@
 	"emmet.useInlineCompletions": true,
 	"editor.inlayHints.enabled": "off",
 	"r.plot.useHttpgd": true,
-	"liveServer.settings.donotShowInfoMsg": true
+	"liveServer.settings.donotShowInfoMsg": true,
+	"workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+	"git.autofetch": true,
+	"editor.minimap.enabled": false,
+	"redhat.telemetry.enabled": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"svg.preview.mode": "svg",
+	"window.zoomLevel": 1
 }

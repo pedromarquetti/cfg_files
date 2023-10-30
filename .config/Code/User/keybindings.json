@@ -28,7 +28,7 @@
 		"command": "editor.action.fontZoomOut"
 	},
 	{
-		"key": "ctrl+alt+'",
+		"key": "ctrl+m ctrl+t",
 		"command": "workbench.action.terminal.moveToEditor"
 	},
 	{
