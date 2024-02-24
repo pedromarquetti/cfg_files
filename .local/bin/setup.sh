@@ -91,12 +91,44 @@ function install_code(){
     
 }
 
+function install_games(){
+    print_cyan "installing steam"
+    sudo apt install -y steam
+    print_cyan "installing lutris"
+    sudo apt install -y lutris
+    print_cyan "installing wine"
+    sudo apt install -y wine
+    print_cyan "installing discord"
+    sudo apt install -y discord
+    print_cyan "installing heroic"
+    sudo apt install -y heroic
+}
+
+function install_misc(){
+    print_cyan "installing gufw"
+    sudo apt install -y gufw
+    print_cyan "installing spotify with flatpak"
+    sudo apt install -y flatpak &&
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
+    flatpak install -y flathub com.spotify.Client
+    print_cyan "installing vlc"
+    sudo apt install -y vlc
+    print_cyan "installing qbittorrent"
+    sudo apt install -y qbittorrent
+    print_cyan "installing gimp"
+    sudo apt install -y gimp
+    print_cyan "installing onlyoffice"
+    sudo apt install -y onlyoffice-desktopeditors
+    print_cyan "installing telegram with flatpak"
+    flatpak install -y flathub org.telegram.desktop
+}
+
 main(){
     print_cyan "Hi $(whoami), how are you?"
     print_cyan "Let's update everything first..."
     sudo apt update &&
     sudo apt upgrade -y && 
-    sudo apt install -y htop &&
+    sudo apt install -y btop &&
     print_cyan "Let's install git first"
     setup_git &&
     print_green "git installed"
@@ -106,6 +138,12 @@ main(){
     print_cyan "and install vscode now"
     install_code && 
     print_green "vscode installed... yayyyy"
+    print_cyan "installing some game launchers"
+    install_games &&
+    print_green "launchers installed"
+    print_cyan "installing misc. stuff"
+    print_green "misc. stuff installed"
+    install_misc &&    
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
     print_red "----------"
