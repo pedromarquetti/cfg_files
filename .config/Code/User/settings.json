@@ -124,7 +124,7 @@
 		"editor.suggest.snippetsPreventQuickSuggestions": false,
 		"editor.suggestSelection": "first",
 		"editor.tabCompletion": "onlySnippets",
-		"editor.wordBasedSuggestions": false
+		"editor.wordBasedSuggestions": "off"
 	},
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.startupEditor": "none",
@@ -153,11 +153,11 @@
 	"editor.inlayHints.enabled": "off",
 	"r.plot.useHttpgd": true,
 	"liveServer.settings.donotShowInfoMsg": true,
-	"workbench.colorTheme": "Community Material Theme Ocean High Contrast",
 	"git.autofetch": true,
 	"editor.minimap.enabled": false,
 	"redhat.telemetry.enabled": false,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"svg.preview.mode": "svg",
-	"window.zoomLevel": 1
+	"window.zoomLevel": 1,
+	"workbench.colorTheme": "Material Theme Ocean"
 }
