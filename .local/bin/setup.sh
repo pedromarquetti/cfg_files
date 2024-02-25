@@ -123,6 +123,13 @@ function install_misc(){
     flatpak install -y flathub org.telegram.desktop
 }
 
+function setup_postgres(){
+    sudo apt install -y postgresql postgresql-contrib
+    sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+    sudo systemctl enable postgresql
+    sudo systemctl start postgresql
+}
+
 main(){
     print_cyan "Hi $(whoami), how are you?"
     print_cyan "Let's update everything first..."
@@ -142,8 +149,11 @@ main(){
     install_games &&
     print_green "launchers installed"
     print_cyan "installing misc. stuff"
+    install_misc &&
     print_green "misc. stuff installed"
-    install_misc &&    
+    print_cyan "setting up postgres"    
+    setup_postgres &&
+    print_green "postgres setup done!"
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
     print_red "----------"
