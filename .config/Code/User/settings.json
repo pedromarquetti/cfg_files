@@ -159,5 +159,6 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"svg.preview.mode": "svg",
 	"window.zoomLevel": 1,
-	"workbench.colorTheme": "Material Theme Ocean"
+	"workbench.colorTheme": "Material Theme Ocean",
+	"postman.telemetry.enabled": false
 }
