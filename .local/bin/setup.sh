@@ -86,7 +86,7 @@ function install_code(){
         sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' && 
         rm -f packages.microsoft.gpg &&
         sudo apt update &&
-        sudo apt install -y code &&
+        sudo apt install -y code 
     fi
     if [[ ! -f /bin/code ]]; then
         return 1
@@ -102,9 +102,9 @@ function install_games(){
     print_cyan "installing wine"
     sudo apt install -y wine &&
     print_cyan "installing discord"
-    sudo apt install -y discord &&
+    flatpak install --system -y com.discordapp.Discord&&
     print_cyan "installing heroic with flatpak"
-    flatpak install --system -y heroic &&
+    flatpak install --system -y heroic 
     
 }
 
@@ -126,9 +126,9 @@ function install_misc(){
 }
 
 function setup_postgres(){
-    sudo apt install -y postgresql postgresql-contrib
-    sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
-    sudo systemctl enable postgresql
+    sudo apt install -y postgresql postgresql-contrib &&
+    sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';" &&
+    sudo systemctl enable postgresql &&
     sudo systemctl start postgresql
 }
 
