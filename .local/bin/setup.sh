@@ -86,41 +86,43 @@ function install_code(){
         sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list' && 
         rm -f packages.microsoft.gpg &&
         sudo apt update &&
-        sudo apt install -y code
+        sudo apt install -y code &&
+    fi
+    if [[ ! -f /bin/code ]]; then
+        return 1
     fi
     
 }
 
 function install_games(){
     print_cyan "installing steam"
-    sudo apt install -y steam
+    sudo apt install -y steam &&
     print_cyan "installing lutris"
-    sudo apt install -y lutris
+    sudo apt install -y lutris &&
     print_cyan "installing wine"
-    sudo apt install -y wine
+    sudo apt install -y wine &&
     print_cyan "installing discord"
-    sudo apt install -y discord
-    print_cyan "installing heroic"
-    sudo apt install -y heroic
+    sudo apt install -y discord &&
+    print_cyan "installing heroic with flatpak"
+    flatpak install --system -y heroic &&
+    
 }
 
 function install_misc(){
     print_cyan "installing gufw"
-    sudo apt install -y gufw
+    sudo apt install -y gufw &&
     print_cyan "installing spotify with flatpak"
-    sudo apt install -y flatpak &&
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
-    flatpak install -y flathub com.spotify.Client
+    flatpak install --system -y  com.spotify.Client &&
     print_cyan "installing vlc"
-    sudo apt install -y vlc
+    sudo apt install -y vlc &&
     print_cyan "installing qbittorrent"
-    sudo apt install -y qbittorrent
+    sudo apt install -y qbittorrent &&
     print_cyan "installing gimp"
-    sudo apt install -y gimp
-    print_cyan "installing onlyoffice"
-    sudo apt install -y onlyoffice-desktopeditors
+    sudo apt install -y gimp &&
+    print_cyan "installing onlyoffice with flatpak"
+    flatpak install --system -y onlyoffice &&
     print_cyan "installing telegram with flatpak"
-    flatpak install -y flathub org.telegram.desktop
+    flatpak install --system -y org.telegram.desktop 
 }
 
 function setup_postgres(){
