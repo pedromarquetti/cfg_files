@@ -123,6 +123,9 @@ function install_misc(){
     flatpak install --system -y onlyoffice &&
     print_cyan "installing telegram with flatpak"
     flatpak install --system -y org.telegram.desktop 
+    print_cyan "installing vim"
+    sudo apt install -y vim &&
+    
 }
 
 function setup_postgres(){
