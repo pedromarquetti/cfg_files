@@ -124,7 +124,7 @@ function install_misc(){
     print_cyan "installing telegram with flatpak"
     flatpak install --system -y org.telegram.desktop 
     print_cyan "installing vim"
-    sudo apt install -y vim &&
+    sudo apt install -y vim 
     
 }
 
