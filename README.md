@@ -48,6 +48,13 @@ Some useful script are located at `.local/bin`, they can be used to save your co
 
 At `.backup` and `.config/Code/Backups/`, there are some configs I use. The scripts mentioned above will update these configs
 
+## Extensions
+
+Some extensions I like:
+
+1. [Dash2DockLite](https://github.com/icedman/dash2dock-lite) to make my Dock prettier (can also be installed from [here](https://extensions.gnome.org/extension/4994/dash2dock-lite/))
+1. [Search Light](https://github.com/icedman/search-light) cool looking search bar (can also be installed from [here](https://extensions.gnome.org/extension/5489/search-light/))
+
 ## Issues
 
 Please report if you find any issues, I just learned Shell Scripting, so, errors are expected
