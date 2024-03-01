@@ -149,7 +149,7 @@ function install_gnome_extensions(){
     cd ~
     print_green "Dash2Dock Lite installed"
     print_cyan "installing Search Light"
-    git clone https://github.com/icedman/search-light $XDG_DATA_HOME/gnome-shell/extensions/ &&
+    git clone https://github.com/icedman/search-light $XDG_DATA_HOME/gnome-shell/extensions/search-light &&
     cd $XDG_DATA_HOME/gnome-shell/extensions/search-light &&
     make &&
     cd ~
