@@ -129,8 +129,14 @@ function install_misc(){
 }
 
 function setup_postgres(){
-    sudo apt install -y postgresql postgresql-contrib &&
+    sudo apt install -y postgresql postgresql-contrib libpq-dev &&
     sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';" &&
+    sudo -u postgres psql -c "CREATE DATABASE dev;" &&
+    sudo -u postgres psql -c "CREATE ROLE dev PASSWORD 'dev' NOSUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;" &&
+    sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE dev TO dev;" &&
+    # changing pg_hba.conf to allow password auth
+    sudo sed -i 's/peer/md5/g' /etc/postgresql/14/main/pg_hba.conf &&
+
     sudo systemctl enable postgresql &&
     sudo systemctl start postgresql
 }
