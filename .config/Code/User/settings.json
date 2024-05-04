@@ -50,7 +50,7 @@
 	},
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"code-runner.runInTerminal": true,
-	"python.defaultInterpreterPath": "/home/phlm/Documents/programming/python/jobscraper/.env",
+	"python.defaultInterpreterPath": "/bin/python3",
 	"code-runner.executorMap": {
 		"javascript": "node",
 		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -105,12 +105,10 @@
 		"fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
 	},
 	"editor.wordWrap": "on",
-	"[r]": {
-		"editor.defaultFormatter": "REditorSupport.r"
-	},
+
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.python",
-		"editor.formatOnType": true
+		"editor.formatOnType": true,
+		"editor.defaultFormatter": "ms-python.autopep8"
 	},
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -160,5 +158,9 @@
 	"svg.preview.mode": "svg",
 	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Material Theme Ocean",
-	"postman.telemetry.enabled": false
+	"postman.telemetry.enabled": false,
+	"[glsl]": {
+		"editor.defaultFormatter": "circledev.glsl-canvas"
+	},
+	"workbench.preferredDarkColorTheme": "Material Theme Ocean High Contrast"
 }
