@@ -37,9 +37,9 @@ RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
 source ~/Git/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
+znap source zsh-users/zsh-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
 
 source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
@@ -87,7 +87,6 @@ zstyle ':autocomplete:*' min-delay 0.05  # seconds (float)
 
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
 ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=cyan,bold
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
@@ -227,3 +226,7 @@ alias mkdir='mkdir -p '
 alias backup_dconf="dconf dump / > $HOME/.backup/backup.dconf"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
