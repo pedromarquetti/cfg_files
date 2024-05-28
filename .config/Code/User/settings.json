@@ -162,5 +162,12 @@
 	"[glsl]": {
 		"editor.defaultFormatter": "circledev.glsl-canvas"
 	},
-	"workbench.preferredDarkColorTheme": "Material Theme Ocean High Contrast"
+	"workbench.preferredDarkColorTheme": "Material Theme Ocean High Contrast",
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+	"github.copilot.editor.enableAutoCompletions": true
 }
