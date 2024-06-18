@@ -67,10 +67,11 @@ bindkey '^[[1;5C' forward-word                  # ctrl + ->
 bindkey '^[[1;5D' backward-word                 # ctrl + <-
 bindkey '^[[5~' beginning-of-buffer-or-history  # page up
 bindkey '^[[6~' end-of-buffer-or-history        # page down
-bindkey '^[[H' beginning-of-line                # home
-bindkey '^[[F' end-of-line                      # end
-bindkey '^[[Z' undo                             # shift + tab undo last action
-bindkey '^ '   autosuggest-accept	            # accept autosuggest with ctrl+space
+bindkey '^[[H'  beginning-of-line                # home
+bindkey '^[[F'  end-of-line                      # end
+bindkey '^[[Z'  undo                             # shift + tab undo last action
+bindkey '^I'    autosuggest-accept	        # accept autosuggest with ctrl+space
+bindkey '^ '    menu-complete                   # ctrl+space to cycle through options
 
 # enable completion features
 autoload -Uz compinit
