@@ -151,5 +151,58 @@
 		"key": "ctrl+enter",
 		"command": "-github.copilot.generate",
 		"when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+	},
+	{
+		"key": "ctrl+capslock",
+		"command": "workbench.action.openQuickChat.copilot"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "-github.copilot.generate",
+		"when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+	},
+	{
+		"key": "ctrl+shift+i",
+		"command": "references-view.findImplementations"
+	},
+	{
+		"key": "alt+\\",
+		"command": "github.copilot.interactiveEditor.generate"
+	},
+	{
+		"key": "ctrl+alt+right",
+		"command": "-workbench.action.moveEditorToNextGroup"
+	},
+	{
+		"key": "ctrl+alt+down",
+		"command": "workbench.action.splitEditorDown"
+	},
+	{
+		"key": "ctrl+k ctrl+\\",
+		"command": "-workbench.action.splitEditorDown"
+	},
+	{
+		"key": "ctrl+alt+left",
+		"command": "workbench.action.splitEditorLeft"
+	},
+	{
+		"key": "ctrl+k ctrl+\\",
+		"command": "-workbench.action.splitEditorLeft"
+	},
+	{
+		"key": "ctrl+alt+right",
+		"command": "workbench.action.splitEditorRight"
+	},
+	{
+		"key": "ctrl+k ctrl+\\",
+		"command": "-workbench.action.splitEditorRight"
+	},
+	{
+		"key": "ctrl+alt+up",
+		"command": "workbench.action.splitEditorUp"
+	},
+	{
+		"key": "ctrl+k ctrl+\\",
+		"command": "-workbench.action.splitEditorUp"
 	}
 ]
