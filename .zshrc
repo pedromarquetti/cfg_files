@@ -38,6 +38,8 @@ RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
 source ~/Git/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
+export NVM_LAZY_LOAD=true
+znap source lukechilds/zsh-nvm
 znap source zsh-users/zsh-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
@@ -70,7 +72,7 @@ bindkey '^[[6~' end-of-buffer-or-history        # page down
 bindkey '^[[H'  beginning-of-line                # home
 bindkey '^[[F'  end-of-line                      # end
 bindkey '^[[Z'  undo                             # shift + tab undo last action
-bindkey '^I'    autosuggest-accept	        # accept autosuggest with ctrl+space
+bindkey '^I'    autosuggest-accept	        # accept autosuggest with tab
 bindkey '^ '    menu-complete                   # ctrl+space to cycle through options
 
 # enable completion features
@@ -78,7 +80,8 @@ autoload -Uz compinit
 # compinit -d ~/.cache/zcompdump
 compinit -u
 # commented the line below because autocomplete was not working
-zstyle ':completion:*:*:*:*:*' menu yes select 
+zstyle ':completion:*:*:*:*:*' menu select 
+# zstyle ':completion:*:*:*:*:*' menu yes select 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 # autocomplete config
@@ -229,6 +232,3 @@ alias backup_dconf="dconf dump / > $HOME/.backup/backup.dconf"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
