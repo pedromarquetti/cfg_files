@@ -1,13 +1,14 @@
 # exporting these fix an error I was having with znap
 
-#export XDG_DATA_HOME=$HOME/.local/share 
-#export XDG_CACHE_HOME=$HOME/.cache
-#export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share 
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
 
 # History configurations
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=20000
+
 setopt appendhistory
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups   # ignore duplicated commands history list
@@ -16,10 +17,6 @@ setopt hist_verify            # show command with history expansion to user befo
 # setopt share_history        # share command history data
 
 export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
-
-# custom prompt
-PROMPT='%F{green}%~ %F{white}%(!.#.$) '
-RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
 
 # Check if Git dir exists
 [[ -d ~/Git ]] || 
@@ -38,7 +35,9 @@ RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
 source ~/Git/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
+# the line below makes shell load faster, but breaks nvim LSP
 export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
 znap source lukechilds/zsh-nvm
 znap source zsh-users/zsh-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
@@ -57,38 +56,47 @@ setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
+# custom prompt
+PROMPT='%K{yellow}%F{black}%B${vcs_info_msg_0_}%k%b%F{green}%~ %F{white}%(!.#.$) '
+RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
+
 # configure key keybindings
-bindkey -e                                      # emacs key bindings
+# bindkey -e                                    # emacs key bindings
 bindkey '^K' kill-whole-line                    # kill whole line
 bindkey ' ' magic-space                         # do history expansion on space
 bindkey '^[[3;5~' kill-word                     # ctrl + delete -> kill word foward
 bindkey '^H' backward-kill-word                 # kill word left of cursor << this key can vary
 # bindkey '^?' backward-kill-word               # if the above doesn't work, try this
 bindkey '^[[3~' delete-char                     # delete
-bindkey '^[[1;5C' forward-word                  # ctrl + ->
-bindkey '^[[1;5D' backward-word                 # ctrl + <-
+# bindkey '^[[1;5C' forward-word                  # ctrl + ->
+bindkey '^w' forward-word                       # ctrl+w forward word
+# bindkey '^[[1;5D' backward-word                 # ctrl + <-
+bindkey '^B' backward-word                      # ctrl+B forward word
 bindkey '^[[5~' beginning-of-buffer-or-history  # page up
 bindkey '^[[6~' end-of-buffer-or-history        # page down
 bindkey '^[[H'  beginning-of-line                # home
 bindkey '^[[F'  end-of-line                      # end
 bindkey '^[[Z'  undo                             # shift + tab undo last action
-bindkey '^I'    autosuggest-accept	        # accept autosuggest with tab
-bindkey '^ '    menu-complete                   # ctrl+space to cycle through options
+bindkey '^ '    autosuggest-accept	        # accept autosuggest with ctrl + space 
+bindkey '^I'    menu-complete                   # Tab to cycle through options
 
 # enable completion features
-autoload -Uz compinit
-# compinit -d ~/.cache/zcompdump
-compinit -u
-# commented the line below because autocomplete was not working
+autoload -Uz compinit && compinit 
 zstyle ':completion:*:*:*:*:*' menu select 
-# zstyle ':completion:*:*:*:*:*' menu yes select 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
+# enable git status
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats "(%b)" 
+zstyle ':vcs_info:git:*' formats "(%b)" 
 # autocomplete config
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # Wait this many seconds for typing to stop, before showing completions.
-zstyle ':autocomplete:*' min-delay 0.05  # seconds (float)
+zstyle ':autocomplete:*' min-delay 0.09  # seconds (float)
 
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -231,4 +239,6 @@ alias mkdir='mkdir -p '
 alias backup_dconf="dconf dump / > $HOME/.backup/backup.dconf"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
 alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
+
+
 
