@@ -52,10 +52,7 @@ install_zsh(){
 config(){ # alias used to make it easier to work with these files
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
-setup_nvim(){
-    print_cyan "setting up Nvim"
-    if 
-}
+
 setup_env(){
     print_cyan "creating a bckp folder"
     mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
