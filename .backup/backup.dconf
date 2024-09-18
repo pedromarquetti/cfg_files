@@ -1,33 +1,52 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/desktop/interface/cursor-size'
-saved-view='/org/gnome/desktop/interface/cursor-size'
+saved-pathbar-path='/com/gexperts/Tilix/keybindings/session-switch-to-next-terminal'
+saved-view='/com/gexperts/Tilix/keybindings/'
 show-warning=false
 window-height=814
 window-is-maximized=false
 window-width=1217
 
 [com/gexperts/Tilix]
+auto-hide-mouse=true
 control-scroll-zoom=true
 copy-on-select=true
 prompt-on-close=true
 prompt-on-close-process=false
+quake-height-percent=90
 quake-specific-monitor=0
 sidebar-on-right=false
 use-tabs=true
 
 [com/gexperts/Tilix/keybindings]
-session-add-down='<Primary><Alt>Down'
-session-add-right='<Primary><Alt>Right'
+session-add-down='<Primary>j'
+session-add-right='<Primary>l'
 session-close='disabled'
+session-resize-terminal-down='<Shift><Alt>j'
+session-resize-terminal-left='<Shift><Alt>h'
+session-resize-terminal-right='<Shift><Alt>l'
+session-resize-terminal-up='<Shift><Alt>k'
+session-switch-to-next-terminal=''
+session-switch-to-terminal-down='<Alt>j'
+session-switch-to-terminal-left='<Alt>h'
+session-switch-to-terminal-right='<Alt>l'
+session-switch-to-terminal-up='<Alt>k'
 terminal-close='<Primary><Shift>w'
 
 [com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-default-size-columns=90
-default-size-rows=40
-font='Monospace 16'
+background-color='#000000000000'
+badge-color-set=false
+bold-color-set=false
+cursor-colors-set=false
+cursor-shape='block'
+draw-margin=88
+font='UbuntuMono Nerd Font Bold 20'
+foreground-color='#DEDEDDDDDADA'
+highlight-colors-set=false
 login-shell=true
+palette=['#000000000000', '#AA0000', '#00AA00', '#FFFF78780000', '#0000AA', '#AA00AA', '#00AAAA', '#F6F6F5F5F4F4', '#2A2A28282828', '#FF5454', '#54FF54', '#FFFFFFFF5454', '#5454FF', '#FF54FF', '#54FFFF', '#FFFFFFFFFFFF']
 select-by-word-chars='-,./?%&#:_*[]()!@'
 use-system-font=false
+use-theme-colors=false
 visible-name='Default'
 
 [com/github/donadigo/eddy]
@@ -94,8 +113,16 @@ screen-reader-enabled=false
 [org/gnome/desktop/a11y/magnifier]
 mouse-tracking='proportional'
 
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri-dark='file:///usr/share/backgrounds/pop/jake-hills-36605.jpg'
+primary-color='#000000'
+secondary-color='#000000'
+
 [org/gnome/desktop/input-sources]
 current=uint32 0
+mru-sources=[('xkb', 'br'), ('ibus', 'mozc-jp')]
 per-window=false
 sources=[('xkb', 'br')]
 xkb-options=@as []
@@ -174,7 +201,12 @@ two-finger-scrolling-enabled=true
 report-technical-problems=false
 
 [org/gnome/desktop/screensaver]
+color-shading-type='solid'
 lock-delay=uint32 0
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/pop/jake-hills-36605.jpg'
+primary-color='#000000'
+secondary-color='#000000'
 
 [org/gnome/desktop/session]
 idle-delay=uint32 600
@@ -190,18 +222,20 @@ switch-panels=@as []
 switch-panels-backward=@as []
 
 [org/gnome/desktop/wm/keybindings]
+minimize=['<Super>Down']
 show-desktop=['<Super>d']
 switch-applications=['<Alt>Tab']
 switch-applications-backward=['<Shift><Alt>Tab']
 switch-group=['<Primary>apostrophe']
 switch-group-backward=['<Primary><Shift>apostrophe']
+toggle-maximized=['<Super>m', '<Super>Up']
 
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
 use-background-color=true
 
 [org/gnome/evince/default]
-window-ratio=(1.0403361344537816, 0.65083135391923985)
+window-ratio=(1.0392156862745099, 0.65151515151515149)
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -210,9 +244,13 @@ network-monitor-gio-name=''
 [org/gnome/evolution-data-server/calendar]
 notify-completed-tasks=false
 
+[org/gnome/file-roller/dialogs/extract]
+recreate-folders=true
+skip-newer=false
+
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
-name-column-width=250
+name-column-width=481
 show-path=false
 sort-method='name'
 sort-type='ascending'
@@ -243,6 +281,10 @@ state=43908
 [org/gnome/mutter]
 edge-tiling=true
 
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=['<Primary><Super>Left', '<Primary><Super>KP_Left', '<Super>Left']
+toggle-tiled-right=['<Primary><Super>Right', '<Primary><Super>KP_Right', '<Super>Right']
+
 [org/gnome/nautilus/icon-view]
 default-zoom-level='small'
 
@@ -267,9 +309,9 @@ www=['<Super>b']
 [org/gnome/shell]
 command-history=['R', 'README.mr', 'r']
 disable-user-extensions=false
-disabled-extensions=['ubuntu-dock@ubuntu.com', 'cosmic-dock@system76.com']
-enabled-extensions=['pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-workspaces@system76.com', 'text-scaler@gnome-shell-extensions.mariospr.org', 'dash2dock-lite@icedman.github.com']
-favorite-apps=['com.gexperts.Tilix.desktop', 'firefox.desktop', 'com.github.Eloston.UngoogledChromium.desktop', 'org.telegram.desktop.desktop', 'code.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'org.gnome.Contacts.desktop', 'com.discordapp.Discord.desktop', 'org.onlyoffice.desktopeditors.desktop', 'vlc.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
+disabled-extensions=['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com', 'ding@rastersoft.com', 'cosmic-dock@system76.com', 'search-light@icedman.github.com']
+enabled-extensions=['text-scaler@gnome-shell-extensions.mariospr.org', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'cosmic-workspaces@system76.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'sound-output-device-chooser@kgshank.net', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'dash2dock-lite@icedman.github.com', 'alt-tab-scroll-workaround@lucasresck.github.io']
+favorite-apps=['com.gexperts.Tilix.desktop', 'terminator.desktop', 'firefox.desktop', 'code.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.telegram.desktop.desktop', 'steam.desktop', 'com.bitwarden.desktop.desktop', 'org.gnome.Contacts.desktop', 'com.discordapp.Discord.desktop', 'vlc.desktop', 'onlyoffice-desktopeditors.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop', 'gufw.desktop', 'org.gnome.Geary.desktop', 'io.elementary.appcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Calculator.desktop']
 welcome-dialog-last-shown-version='42.0'
 
 [org/gnome/shell/extensions/dash-to-dock]
@@ -293,15 +335,70 @@ show-mounts-network=true
 show-show-apps-button=false
 
 [org/gnome/shell/extensions/dash2dock-lite]
+animation-bounce=0.87
+animation-magnify=0.22
+animation-rise=1.0
+animation-spread=1.0
 autohide-dash=true
+autohide-dodge=true
+autohide-speed=0.60999999999999999
 background-dark=true
 background-opacity=1.0
+border-radius=3.0
+clock-icon=false
+customize-label=false
+customize-topbar=true
+debug-visual=false
+dock-location=0
+dock-padding=0.28499999999999998
+downloads-icon=false
+edge-distance=0.36065573770491799
+icon-effect=0
+icon-resolution=4
+icon-spacing=0.73076923076923073
+items-pullout-angle=0.5
+lamp-app-animation=true
+monitor-count=1
+msg-to-ext=''
+notification-badge-style=2
+open-app-animation=true
+panel-mode=false
+preferred-monitor=0
+pressure-sense=false
+pressure-sense-sensitivity=0.22
 reuse-dash=true
+running-indicator-style=1
+scroll-sensitivity=0.22
 shrink-icons=false
+topbar-background-color=(0.0, 0.0, 0.0, 0.25)
+
+[org/gnome/shell/extensions/ncom/github/hermes83/compiz-alike-magic-lamp-effect]
+duration=303.0
+effect='default'
 
 [org/gnome/shell/extensions/pop-shell]
+focus-down=@as []
+focus-left=@as []
+focus-right=@as []
+focus-up=['<Super>k']
 tile-by-default=false
+toggle-stacking-global=['<Primary><Super>s']
 toggle-tiling=['<Super>y', '<Super>apostrophe']
+
+[org/gnome/shell/extensions/search-light]
+background-color=(0.0, 0.0, 0.0, 0.54000002145767212)
+blur-background=false
+blur-brightness=1.0
+blur-sigma=200.0
+border-radius=1.9297297297297298
+border-thickness=1
+entry-font-size=1
+monitor-count=1
+scale-height=0.12
+scale-width=0.23999999999999999
+shortcut-search=['<Super>s']
+show-panel-icon=true
+text-color=(1.0, 1.0, 1.0, 0.0)
 
 [org/gnome/shell/keybindings]
 screenshot=['Print']
@@ -316,14 +413,39 @@ toggle-overview=['<Super>w']
 automatic-location=true
 locations=[<(uint32 2, <('Limeira, São Paulo', '', false, [(-0.39377257787108982, -0.82731688795990255)], [(-0.39663095943761695, -0.83163490234250648)])>)>]
 
+[org/gnome/simple-scan]
+brightness=-30
+document-type='photo'
+
 [org/gnome/system/location]
 enabled=false
+
+[org/gtk/gtk4/settings/color-chooser]
+custom-colors=[(0.65333330631256104, 0.10888885706663132, 0.10888885706663132, 0.25), (0.65333330631256104, 0.1088888943195343, 0.1088888943195343, 0.25), (0.0, 0.0, 0.0, 0.25), (0.0, 0.0, 0.0, 0.54000002145767212), (0.0, 0.0, 0.0, 0.8033333420753479), (0.0, 0.0, 0.0, 0.50666666030883789), (0.0, 0.0, 0.0, 0.31666666269302368), (1.0, 1.0, 1.0, 0.0)]
+selected-color=(true, 0.0, 0.0, 0.0, 0.25)
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=223
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-size=(1466, 620)
+
+[org/gtk/settings/color-chooser]
+custom-colors=[(0.75294117647058822, 0.74509803921568629, 0.74901960784313726, 1.0), (1.0, 1.0, 0.32941176470588235, 1.0), (0.66666666666666663, 0.32941176470588235, 0.0, 1.0), (0.16666666666666669, 0.16000000000000003, 0.16000000000000003, 1.0), (0.65490196078431373, 0.65490196078431373, 0.65490196078431373, 1.0), (0.66666666666666663, 0.66666666666666663, 0.66666666666666663, 1.0), (0.32941176470588235, 0.32941176470588235, 0.32941176470588235, 1.0), (0.22666666666666668, 0.22666666666666668, 0.22666666666666668, 1.0)]
+selected-color=(true, 0.96078431372549022, 0.76078431372549016, 0.066666666666666666, 1.0)
 
 [org/gtk/settings/file-chooser]
 clock-format='24h'
 date-format='regular'
 location-mode='path-bar'
-show-hidden=false
+show-hidden=true
 show-size-column=true
 show-type-column=true
 sidebar-width=285
@@ -331,5 +453,5 @@ sort-column='modified'
 sort-directories-first=true
 sort-order='descending'
 type-format='category'
-window-position=(253, 95)
-window-size=(1414, 890)
+window-position=(214, 103)
+window-size=(1492, 870)
