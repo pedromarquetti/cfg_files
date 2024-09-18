@@ -52,7 +52,10 @@ install_zsh(){
 config(){ # alias used to make it easier to work with these files
     /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
-
+setup_nvim(){
+    print_cyan "setting up Nvim"
+    if 
+}
 setup_env(){
     print_cyan "creating a bckp folder"
     mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
@@ -162,6 +165,17 @@ function install_gnome_extensions(){
     print_green "Search Light installed"
 
 
+}
+
+install_nerdfont() {
+    print_cyan "Installing NerdFont Ubuntu Mono..."
+    if [[ ! -d /usr/share/fonts/NerdFont-Ubuntu/ ]]; then
+        print_green "no NerdFont dir, creating..."
+        mkdir -v -R /usr/share/fonts/NerdFont-Ubuntu/
+    fi
+    curl -L -o /tmp/Ubuntu.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip &&
+    unzip -d /usr/share/fonts/NerdFont-Ubuntu/ /tmp/Ubuntu.zip
+    print_green "Fonts installed"
 }
 
 main(){
