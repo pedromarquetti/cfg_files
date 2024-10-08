@@ -43,6 +43,8 @@ function setup_git(){
     if [[ ! -f /usr/bin/git || ! -f /bin/git ]]; then
         print_red "git not found, you'll need sudo to 'apt install git'"
         exit 1
+        else
+            print_green "git ok"
     fi
     
 }
@@ -51,6 +53,8 @@ function setup_zsh(){
     if [[ ! -f /bin/zsh || ! -f /usr/bin/zsh ]]; then
         print_red "zsh not found! you'll need sudo to 'apt install' it"
         exit 1
+        else
+            print_green "ZSH ok"
     fi
 }
 
@@ -90,6 +94,8 @@ config(){ # alias used to make it easier to work with these files
 
 main(){
     print_cyan "Hi $(whoami), how are you?"
+    print_cyan "HOME=${HOME}"
+    print_cyan "current HOME is  $(XDG_DATA_HOME)"
     print_cyan "This script is meant to be used by users that can't sudo..."
     print_cyan "You need to have git installed and apt up to date..."
     print_cyan "Maybe run setup.sh first?"
@@ -120,9 +126,7 @@ main(){
         config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v $HOME{} $HOME.dot-backup/{}
     fi; 
     config config status.showUntrackedFiles no 
-    [[ $SHELL != /bin/zsh ]] &&
-        print_red "SHELL is not zsh... changing"
-        chsh -s $(which zsh) $(whoami)
+    print_yellow "change shell with chsh -s /bin/zsh, then login again!"
     /bin/zsh
 }
 
