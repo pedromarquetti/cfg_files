@@ -1,9 +1,3 @@
-# exporting these fix an error I was having with znap
-
-export XDG_DATA_HOME=$HOME/.local/share 
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-
 # History configurations
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000

@@ -25,6 +25,14 @@ curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local
 curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local/bin/setup_noroot.sh | bash
 ```
 
+
+### Setup NVIM 
+
+```
+
+curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local/bin/setup_nvim.sh | bash
+```
+
 ### Or you could do it manually
 
 ```

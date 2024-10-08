@@ -1,11 +1,5 @@
 !#/bin/bash
 
-# setting XDG vars
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_STATE_HOME="${HOME}/.local/state"
-
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
     [GREEN]=$'\033[0;32m'
