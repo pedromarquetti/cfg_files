@@ -95,7 +95,6 @@ config(){ # alias used to make it easier to work with these files
 main(){
     print_cyan "Hi $(whoami), how are you?"
     print_cyan "HOME=${HOME}"
-    print_cyan "current HOME is  $(XDG_DATA_HOME)"
     print_cyan "This script is meant to be used by users that can't sudo..."
     print_cyan "You need to have git installed and apt up to date..."
     print_cyan "Maybe run setup.sh first?"
