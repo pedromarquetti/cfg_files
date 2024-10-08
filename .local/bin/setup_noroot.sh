@@ -99,13 +99,10 @@ main(){
     print_cyan "Maybe run setup.sh first?"
     print_cyan "Let's check if you have git first..."
     setup_git 
-    print_green "git installed"
     print_cyan "now, checking if zsh is installed... "
     setup_zsh 
-    print_green "zsh installed"
     print_cyan "and let's check vscode now"
     check_code 
-    print_green "vscode installed... yayyyy"
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
     print_red "----------"
