@@ -42,7 +42,6 @@ print_cyan () {
 function setup_git(){
     if [[ ! -f /usr/bin/git || ! -f /bin/git ]]; then
         print_red "git not found, you'll need sudo to 'apt install git'"
-        exit 1
         else
             print_green "git ok"
     fi
@@ -52,7 +51,6 @@ function setup_git(){
 function setup_zsh(){
     if [[ ! -f /bin/zsh || ! -f /usr/bin/zsh ]]; then
         print_red "zsh not found! you'll need sudo to 'apt install' it"
-        exit 1
         else
             print_green "ZSH ok"
     fi
@@ -61,7 +59,8 @@ function setup_zsh(){
 function check_code(){
     if [[ ! -f /bin/code || ! -f /usr/bin/code ]]; then
         print_red "VSCode not found! you'll need sudo to 'apt install' it"
-        exit 1
+        else
+            print_green "VSCode ok"
     fi
 }
 
