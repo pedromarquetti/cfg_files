@@ -29,6 +29,14 @@ print_cyan() {
     echo -e "${COLORS[CYAN]}${1}${COLORS[OFF]}\n";
 }
 
+print_cyan "checking if nvm is a function"
+if [[ $(declare -f nvm 2>/dev/null) || -f /bin/nvm ]]; then
+		print_green "nvm installed as a function! Running nvm install node"
+		nvm install node
+else
+print_red "NVM not installed! refer to github.com/lukechilds/zsh-nvm for how to fix 'unable to install ts_ls/bashls'"
+fi
+
 print_cyan "Checking if Neovim is installed"
 if [[ ! -f /usr/bin/nvim ]]; then
     print_cyan "nvim not found on /usr/bin/..."

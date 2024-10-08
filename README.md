@@ -33,6 +33,8 @@ curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local
 curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local/bin/setup_nvim.sh | bash
 ```
 
+> Note: .zshrc contains a NVM plugin to make the shell faster, you must use `nvm install node` for every user before installing some nvim LSPs AND use nvm use node if working on some specific projects (like TS/JS projects OR bash projects, because bash completions depend on node)
+
 ### Or you could do it manually
 
 ```

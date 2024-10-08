@@ -116,7 +116,9 @@ main(){
     fi; 
     config config status.showUntrackedFiles no 
     print_yellow "change shell with chsh -s /bin/zsh, then login again!"
+    print_cyan "Remember to run NVM install node before running the setup script for nvim"
     /bin/zsh
+
 }
 
 main
