@@ -62,10 +62,10 @@ bindkey '^[[3;5~' kill-word                     # ctrl + delete -> kill word fow
 bindkey '^H' backward-kill-word                 # kill word left of cursor << this key can vary
 # bindkey '^?' backward-kill-word               # if the above doesn't work, try this
 bindkey '^[[3~' delete-char                     # delete
-# bindkey '^[[1;5C' forward-word                  # ctrl + ->
-bindkey '^w' forward-word                       # ctrl+w forward word
-# bindkey '^[[1;5D' backward-word                 # ctrl + <-
+bindkey '^[[1;5C' forward-word                  # ctrl + ->
+bindkey '^[[1;5D' backward-word                 # ctrl + <-
 bindkey '^B' backward-word                      # ctrl+B forward word
+bindkey '^\' forward-word                       # ctrl+w forward word
 bindkey '^[[5~' beginning-of-buffer-or-history  # page up
 bindkey '^[[6~' end-of-buffer-or-history        # page down
 bindkey '^[[H'  beginning-of-line                # home
