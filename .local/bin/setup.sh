@@ -212,12 +212,14 @@ main(){
         else
             print_red "something happened, trying again"
             print_cyan "Backing up pre-existing dot files.";
-            config checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
+            config checkout 2>&1 | grep -E "^\s+" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
     fi;
     config config status.showUntrackedFiles no && 
     print_yellow "change shell with chsh -s /bin/zsh, then login again!"
-
     print_cyan "Remember to run NVM install node before running the setup script for nvim"
+    
+    print_cyan "For a better TTS, use https://github.com/Elleo/pied"
+    
     /bin/zsh
 }
 
