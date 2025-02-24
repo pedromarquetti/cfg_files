@@ -47,13 +47,7 @@ if [[ ! -f /usr/bin/nvim ]]; then
 fi
 
 print_cyan "Cloning my configs..."
-git clone https://github.com/pedromarquetti/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/pedromarquetti/neovim_config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 print_green "Cloned! running nvim..."
 
 nvim
-
-
-
-
-
-
