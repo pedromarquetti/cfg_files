@@ -11,6 +11,8 @@ setopt hist_verify            # show command with history expansion to user befo
 # setopt share_history        # share command history data
 
 export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
+export NVIM_DIR="$HOME/.config/nvim/"
+fpath=(~/.config/zsh/completions/ $fpath)
 
 # Check if Git dir exists
 [[ -d ~/Git ]] || 
@@ -30,9 +32,9 @@ source ~/Git/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
 # the line below makes shell load faster, but breaks nvim LSP
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-znap source lukechilds/zsh-nvm
+# export NVM_LAZY_LOAD=true
+# export NVM_COMPLETION=true
+# znap source lukechilds/zsh-nvm
 znap source zsh-users/zsh-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
@@ -235,4 +237,11 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
 
 
+export PATH=$PATH:/home/phlm/.spicetify
 
+# fnm
+FNM_PATH="/home/phlm/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/phlm/.local/share/fnm:$PATH"
+  eval "`fnm env --use-on-cd --shell zsh`"
+fi
