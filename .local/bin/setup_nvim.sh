@@ -1,4 +1,3 @@
-!#/bin/bash
 
 declare -rA COLORS=(
     [RED]=$'\033[0;31m'
@@ -29,12 +28,13 @@ print_cyan() {
     echo -e "${COLORS[CYAN]}${1}${COLORS[OFF]}\n";
 }
 
-print_cyan "checking if nvm is a function"
-if [[ $(declare -f nvm 2>/dev/null) || -f /bin/nvm ]]; then
-		print_green "nvm installed as a function! Running nvm install node"
-		nvm install node
+print_cyan "checking if Fast Node Manager is installed!"
+if [[ -f ~/.local/share/fnm/fnm ]]; then
+		print_green "fnm installed, installing node"
+		fnm install --latest && fnm use "$(fnm list-remote --latest)"
 else
-print_red "NVM not installed! refer to github.com/lukechilds/zsh-nvm for how to fix 'unable to install ts_ls/bashls'"
+print_red "NVM not installed! installing... " 
+curl -fsSL https://fnm.vercel.app/install | bash
 fi
 
 print_cyan "Checking if Neovim is installed"

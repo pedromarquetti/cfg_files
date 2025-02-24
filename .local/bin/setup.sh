@@ -43,8 +43,9 @@ install_zsh(){
         sleep 1
     fi
 }
+
 config(){ # alias used to make it easier to work with these files
-    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+    /usr/bin/git --git-dir="$HOME/.cfg/ " --work-tree="$HOME" $@
 }
 
 setup_env(){
@@ -158,6 +159,18 @@ function install_gnome_extensions(){
 
 }
 
+install_nodemanager() {
+    print_cyan "checking if Fast Node Manager is installed!"
+    if [[ -f ~/.local/share/fnm/fnm ]]; then
+        print_green "fnm installed, installing node"
+        fnm install --latest && fnm use "$(fnm list-remote --latest)"
+    else
+        print_red "FNM not installed! installing... " 
+        curl -fsSL https://fnm.vercel.app/install | bash
+    fi
+
+}
+
 install_nerdfont() {
     print_cyan "Installing NerdFont Ubuntu Mono..."
     if [[ ! -d /usr/share/fonts/NerdFont-Ubuntu/ ]]; then
@@ -197,6 +210,8 @@ main(){
     print_cyan "setting up postgres"    
     setup_postgres &&
     print_green "postgres setup done!"
+    print_green "setting up Node Manager" &&
+    install_nodemanager && 
     print_red "----------"
     print_red "This script WILL override some dotfiles and .config files, make sure you know what you're doing!!!\n\n\nyou have 20 secs to ^C and exit!!!"
     print_red "----------"
