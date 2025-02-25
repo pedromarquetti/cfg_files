@@ -1,5 +1,9 @@
 {
-	"include": {
+	"Iostream": {
+		"body": ["#include <iostream>\n", "using namespace std;\n"],
+		"prefix": "iostream"
+	},
+	"Include": {
 		"body": "#include <$1>",
 		"prefix": "include",
 		"description": "easy #include snippet"
