@@ -12,6 +12,12 @@ setopt hist_verify            # show command with history expansion to user befo
 
 export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
 export NVIM_DIR="$HOME/.config/nvim/"
+export EDITOR=nvim
+export VISUAL=nvim
+if [[ ! -d ~/.config/zsh/completions/ ]]; then
+    mkdir ~/.config/zsh/completions/
+fi
+
 fpath=(~/.config/zsh/completions/ $fpath)
 
 # Check if Git dir exists
@@ -243,5 +249,5 @@ export PATH=$PATH:/home/phlm/.spicetify
 FNM_PATH="/home/phlm/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/phlm/.local/share/fnm:$PATH"
-  eval "`fnm env --use-on-cd --shell zsh`"
+  eval "`fnm env --use-on-cd --version-file-strategy=recursive  --shell zsh`"
 fi
