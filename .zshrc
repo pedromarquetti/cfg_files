@@ -11,9 +11,12 @@ setopt hist_verify            # show command with history expansion to user befo
 # setopt share_history        # share command history data
 
 export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
-export NVIM_DIR="$HOME/.config/nvim/"
+export NVIM_DIR="$HOME/.config/nvim"
 export EDITOR=nvim
 export VISUAL=nvim
+export ZSH=$HOME/.config/zsh
+export ZSH_MODULES=$ZSH/modules
+
 if [[ ! -d ~/.config/zsh/completions/ ]]; then
     mkdir ~/.config/zsh/completions/
 fi
@@ -21,20 +24,20 @@ fi
 fpath=(~/.config/zsh/completions/ $fpath)
 
 # Check if Git dir exists
-[[ -d ~/Git ]] || 
+[[ -d ~/.config/zsh/modules ]] || 
     # || ==> right-side code will only exec if left side code == false
     # ^ if [[ ! -d ~/Git ]]...
     echo "Creating Git dir at ~" \ 
-    mkdir -p ~/Git
+    mkdir -p $ZSH_MODULES
 
 # Download Znap, if it's not there yet.
-[[ -f ~/Git/zsh-snap/znap.zsh ]] || 
+[[ -f $ZSH_MODULES/zsh-snap/znap.zsh ]] || 
     # explanation for this syntax: 
     # https://unix.stackexchange.com/questions/24684/confusing-use-of-and-operators
     git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+        https://github.com/marlonrichert/zsh-snap.git $ZSH_MODULES/zsh-snap
 
-source ~/Git/zsh-snap/znap.zsh
+source $ZSH_MODULES/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
 # the line below makes shell load faster, but breaks nvim LSP
