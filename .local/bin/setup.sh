@@ -13,7 +13,7 @@ declare -rA COLORS=(
 )
 
 print_red () {
-    echo -e "${COLORS[RED]}${1}${COLORS[OFF]}\n"
+     echo -e "${COLORS[RED]}${1}${COLORS[OFF]}\n"
 }
 
 print_yellow () {
@@ -45,28 +45,28 @@ install_zsh(){
 }
 
 config(){ # alias used to make it easier to work with these files
-    /usr/bin/git --git-dir="$HOME/.cfg/ " --work-tree="$HOME" $@
+    /usr/bin/git --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
 }
 
 setup_env(){
     print_cyan "creating a bckp folder"
-    mkdir -v -p $HOME/.dot-backup/{.config-bckp,.local/bin}
+    mkdir -v -p "$HOME"/.dot-backup/{.config-bckp,.local/bin}
 
     print_cyan "moving old zshrc from HOME"
     if [[ -f $HOME/.zshrc ]]; then
-        mv $HOME/.zshrc $HOME/.dot-backup 
+        mv "$HOME"/.zshrc "$HOME"/.dot-backup 
     fi
     if [[ -d $HOME/.config ]]; then
         print_cyan "copying .config folder" 
-        mv -v $HOME/.config $HOME/.dot-backup/.config-bckp 
+        mv -v "$HOME"/.config "$HOME"/.dot-backup/.config-bckp 
     fi
     if [[ -d $HOME/.backup ]]; then
         print_red "backup dir. found, moving it "
-        mv -v $HOME/.backup $HOME/.dot-backup
+        mv -v "$HOME"/.backup "$HOME"/.dot-backup
     fi
     if [[ -d $HOME/.cfg ]]; then   
         print_red ".cfg dir. found, moving it "
-        mv -v $HOME/.cfg $HOME/.dot-backup
+        mv -v "$HOME"/.cfg "$HOME"/.dot-backup
     fi
 
 }
@@ -140,20 +140,20 @@ function install_gnome_extensions(){
     # check if .local/share/gnome-shell/extensions/ exists
     if [[ ! -d $XDG_DATA_HOME/gnome-shell/extensions ]]; then
         print_red "extensions dir. not found, creating it"
-        mkdir -v -p $XDG_DATA_HOME/gnome-shell/extensions
+        mkdir -v -p "$XDG_DATA_HOME"/gnome-shell/extensions
     fi
     # install extensions
     print_cyan "installing Dash2Dock Lite"
-    git clone https://github.com/icedman/dash2dock-lite.git $XDG_DATA_HOME/gnome-shell/extensions/dash2dock-lite &&
-    cd $XDG_DATA_HOME/gnome-shell/extensions/dash2dock-lite &&
+    git clone https://github.com/icedman/dash2dock-lite.git "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
+    cd "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
     make &&
-    cd ~
+    cd ~ || exit
     print_green "Dash2Dock Lite installed"
     print_cyan "installing Search Light"
-    git clone https://github.com/icedman/search-light $XDG_DATA_HOME/gnome-shell/extensions/search-light &&
-    cd $XDG_DATA_HOME/gnome-shell/extensions/search-light &&
+    git clone https://github.com/icedman/search-light "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
+    cd "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
     make &&
-    cd ~
+    cd ~ || exit
     print_green "Search Light installed"
 
 
@@ -183,15 +183,17 @@ install_nerdfont() {
 }
 
 main(){
-    cd ~
+    cd ~ || exit
     print_cyan "Hi $(whoami), how are you?"
     print_cyan "Let's update everything first..."
     sudo apt update &&
     sudo apt upgrade -y && 
-    sudo apt install -y btop &&
+    sudo apt install wget curl && 
     print_cyan "Let's install git first"
     setup_git &&
     print_green "git installed"
+    print_cyan "installing btop"
+    wget https://github.com/aristocratos/btop/releases/download/v1.4.1/btop-x86_64-linux-musl.tbz -v && mkdir -p /tmp/btop  && tar xvjf /tmp/btop-x86_64-linux-musl.tbz -C /tmp/btop/ && cd /tmp/btop/btop && sudo make  &&
     print_cyan "now, checking if zsh is installed... "
     install_zsh && 
     print_green "zsh installed"
@@ -219,16 +221,19 @@ main(){
     print_green "ok, continuing..."
     setup_env &&
     print_cyan "ok, getting my config files"
-    git clone --bare https://github.com/pedromarquetti/cfg_files.git $HOME/.cfg && 
-    print_green "Done"
+    git clone --bare https://github.com/pedromarquetti/cfg_files.git "$HOME"/.cfg && 
+    print_green "Done, Running checkout"
+
     config checkout &&
-    if [ $? = 0 ]; then
+    if config checkout; then
         print_green "Checked out config.";
         else
             print_red "something happened, trying again"
             print_cyan "Backing up pre-existing dot files.";
-            config checkout 2>&1 | grep -E "^\s+" | awk {'print $1'} | xargs -I{} mv -v {}     .dot-backup/{}
+
+            config checkout 2>&1 | grep -E '^(M\s+|\s+)' | awk '{print $2}' | while read -r file; do mkdir -p "$HOME/.dot-backup/$(dirname "$file")"; cp "$HOME"/"$file" "$HOME/.dot-backup/$file"; done
     fi;
+
     config config status.showUntrackedFiles no && 
     print_yellow "change shell with chsh -s /bin/zsh, then login again!"
     print_cyan "Remember to run NVM install node before running the setup script for nvim"
