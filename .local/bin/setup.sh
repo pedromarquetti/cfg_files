@@ -193,7 +193,7 @@ main(){
     setup_git &&
     print_green "git installed"
     print_cyan "installing btop"
-    wget https://github.com/aristocratos/btop/releases/download/v1.4.1/btop-x86_64-linux-musl.tbz -v && mkdir -p /tmp/btop  && tar xvjf /tmp/btop-x86_64-linux-musl.tbz -C /tmp/btop/ && cd /tmp/btop/btop && sudo make  &&
+    wget https://github.com/aristocratos/btop/releases/download/v1.4.1/btop-x86_64-linux-musl.tbz -v -O btop-x86_64-linux-musl.tbz && mkdir -p /tmp/btop  && tar xvjf /tmp/btop-x86_64-linux-musl.tbz -C /tmp/btop/ && cd /tmp/btop/btop && sudo make  &&
     print_cyan "now, checking if zsh is installed... "
     install_zsh && 
     print_green "zsh installed"
