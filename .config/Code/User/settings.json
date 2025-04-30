@@ -1,4 +1,5 @@
 {
+	"editor.maxTokenizationLineLength": 20000000,
 	"python.envFile": "${workspaceFolder}/.env",
 	"code-runner.saveAllFilesBeforeRun": true,
 	"materialTheme.accent": "Yellow",
@@ -49,7 +50,6 @@
 		"*.rmd": "markdown"
 	},
 	"terminal.integrated.defaultProfile.linux": "zsh",
-	"code-runner.runInTerminal": true,
 	"python.defaultInterpreterPath": "/bin/python3",
 	"code-runner.executorMap": {
 		"javascript": "node",
@@ -69,7 +69,6 @@
 		"bat": "cmd /c",
 		"shellscript": "bash",
 		"fsharp": "fsi",
-		"csharp": "scriptcs",
 		"vbscript": "cscript //Nologo",
 		"typescript": "ts-node",
 		"coffeescript": "coffee",
@@ -102,7 +101,9 @@
 		"FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
 		"fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
 		"fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-		"fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+		"fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		// changing default command to run csharp code
+		"csharp": "cd $dir && dotnet run"
 	},
 	"editor.wordWrap": "on",
 
@@ -113,6 +114,7 @@
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
 	},
+	"rust-analyzer.inlayHints.parameterHints.enable": false,
 
 	"[dart]": {
 		"editor.formatOnSave": true,
@@ -148,33 +150,49 @@
 	"emmet.showSuggestionsAsSnippets": true,
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.useInlineCompletions": true,
-	"editor.inlayHints.enabled": "off",
-	"r.plot.useHttpgd": true,
+	"editor.inlayHints.enabled": "offUnlessPressed",
 	"liveServer.settings.donotShowInfoMsg": true,
 	"git.autofetch": true,
 	"editor.minimap.enabled": false,
 	"redhat.telemetry.enabled": false,
-	"diffEditor.ignoreTrimWhitespace": false,
 	"svg.preview.mode": "svg",
 	"window.zoomLevel": 1,
-	"workbench.colorTheme": "Material Theme Ocean",
 	"postman.telemetry.enabled": false,
-	"[glsl]": {
-		"editor.defaultFormatter": "circledev.glsl-canvas"
-	},
-	"workbench.preferredDarkColorTheme": "Material Theme Ocean High Contrast",
+	"workbench.preferredDarkColorTheme": "Tokyo Night",
 	"github.copilot.enable": {
-		"*": false,
+		"*": true,
 		"plaintext": false,
 		"markdown": false,
 		"scminput": false
 	},
 	"github.copilot.editor.enableAutoCompletions": true,
-	"[c]": {
-		"editor.defaultFormatter": "ms-vscode.cpptools"
-	},
 	"[go]": {
 		"editor.defaultFormatter": "golang.go"
 	},
-	"go.toolsManagement.autoUpdate": true
+	"go.toolsManagement.autoUpdate": true,
+	"gitlens.graph.minimap.additionalTypes": [
+		"localBranches",
+		"stashes",
+		"remoteBranches",
+		"pullRequests",
+		"tags"
+	],
+	"code-runner.ignoreSelection": true,
+	"code-runner.runInTerminal": true,
+	"terminal.integrated.defaultLocation": "editor",
+	"extensions.experimental.affinity": {
+		"asvetliakov.vscode-neovim": 1
+	},
+	"editor.lineNumbers": "relative",
+	"editor.largeFileOptimizations": true,
+	"[lua]": {
+		"editor.defaultFormatter": "sumneko.lua"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"[aspnetcorerazor]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp"
+	},
+	"[csharp]": {
+		"editor.defaultFormatter": "ms-dotnettools.csharp"
+	}
 }
