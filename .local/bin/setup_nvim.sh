@@ -33,16 +33,17 @@ if [[ -f ~/.local/share/fnm/fnm ]]; then
 		print_green "fnm installed, installing node"
 		fnm install --latest && fnm use "$(fnm list-remote --latest)"
 else
-print_red "NVM not installed! installing... " 
-curl -fsSL https://fnm.vercel.app/install | bash
+
+    print_red "NVM not installed! installing... " 
+    curl -fsSL https://fnm.vercel.app/install | bash
 fi
 
 print_cyan "Checking if Neovim is installed"
 if [[ ! -f /usr/bin/nvim ]]; then
     print_cyan "nvim not found on /usr/bin/..."
     
-    sudo curl -o /usr/bin/nvim -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage &&
-    sudo chmod a+x /usr/bin/nvim
+    sudo curl -o /usr/bin/nvim -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage &&
+    sudo chmod o-w,a+rx /usr/bin/nvim
     print_green "done!"
 fi
 
