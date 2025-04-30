@@ -60,10 +60,7 @@ setopt nonomatch           # hide error message if there is no match for the pat
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
-
-# custom prompt
-PROMPT='%K{yellow}%F{black}%B${vcs_info_msg_0_}%k%b%F{green}%~ %F{white}%(!.#.$) '
-RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
+setopt prompt_subst
 
 # configure key keybindings
 # bindkey -e                                    # emacs key bindings
@@ -94,15 +91,25 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
+
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats "(%b)" 
-zstyle ':vcs_info:git:*' formats "(%b)" 
+zstyle ':vcs_info:git:*' check-for-changes  yes
+
+zstyle ':vcs_info:*' stagedstr '%F{green}<S>%f'
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}<U>%f'
+
+zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3} %c%u%F{5}[%F{2}%b%F{5}]%f '
+
 # autocomplete config
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # Wait this many seconds for typing to stop, before showing completions.
 zstyle ':autocomplete:*' min-delay 0.09  # seconds (float)
 
+# custom prompt
+PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) '
+RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
@@ -217,13 +224,13 @@ alias ip='ip --color=auto'
 alias c='clear'
 
 # ### git
-alias ginit="git init"
+alias gi="git init"
 alias gru="git remote update"
 alias gpull="git pull"
 alias gpush="git push"
-alias gstats="git status"
-alias gadd="git add"
-alias gcommit="git commit"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
 
 
 ### misc
