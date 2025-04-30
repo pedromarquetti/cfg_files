@@ -188,12 +188,14 @@ main(){
     print_cyan "Let's update everything first..."
     sudo apt update &&
     sudo apt upgrade -y && 
-    sudo apt install wget curl && 
+    sudo apt install -y wget curl make lbzip2 bzip2 && 
     print_cyan "Let's install git first"
     setup_git &&
     print_green "git installed"
-    print_cyan "installing btop"
-    wget https://github.com/aristocratos/btop/releases/download/v1.4.1/btop-x86_64-linux-musl.tbz -v -P /tmp/ && mkdir -p /tmp/btop  && tar xvjf /tmp/btop-x86_64-linux-musl.tbz -C /tmp/btop/ && cd /tmp/btop/btop && sudo make  &&
+    print_cyan "installing latest btop verison!"
+    wget https://github.com/aristocratos/btop/releases/latest/download/btop-x86_64-linux-musl.tbz -v -P /tmp/ && sudo mkdir -v -p /usr/local/share/ && sudo tar xvjf /tmp/btop-x86_64-linux-musl.tbz -C /usr/local/share/ && sudo make -C /usr/local/share/btop/ &&
+    # NOTE: btop uninstall file is in /usr/local/share/btop/
+    print_green "Btop installed! to uninstall go to /usr/local/share/btop/ and run make uninstall"
     print_cyan "now, checking if zsh is installed... "
     install_zsh && 
     print_green "zsh installed"
@@ -222,21 +224,25 @@ main(){
     setup_env &&
     print_cyan "ok, getting my config files"
     git clone --bare https://github.com/pedromarquetti/cfg_files.git "$HOME"/.cfg && 
+
     print_green "Done, Running checkout"
 
     config checkout &&
-    if config checkout; then
-        print_green "Checked out config.";
-        else
+
+    [[ $(config checkout) ]] && 
             print_red "something happened, trying again"
             print_cyan "Backing up pre-existing dot files.";
 
             config checkout 2>&1 | grep -E '^(M\s+|\s+)' | awk '{print $2}' | while read -r file; do mkdir -p "$HOME/.dot-backup/$(dirname "$file")"; cp "$HOME"/"$file" "$HOME/.dot-backup/$file"; done
-    fi;
+
+    config checkout &&
 
     config config status.showUntrackedFiles no && 
     print_yellow "change shell with chsh -s /bin/zsh, then login again!"
-    print_cyan "Remember to run NVM install node before running the setup script for nvim"
+    print_yellow "for some reason, if i run chsh from here, the shell does not change"
+
+    print_cyan "Running neovim setup script"
+    bash "$HOME"/.local/bin/setup_nvim.sh
     
     print_cyan "For a better TTS, use https://github.com/Elleo/pied"
     
