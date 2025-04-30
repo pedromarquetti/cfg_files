@@ -137,25 +137,25 @@ function setup_postgres(){
 }
 
 function install_gnome_extensions(){
+
     # check if .local/share/gnome-shell/extensions/ exists
     if [[ ! -d $XDG_DATA_HOME/gnome-shell/extensions ]]; then
         print_red "extensions dir. not found, creating it"
-        mkdir -v -p "$XDG_DATA_HOME"/gnome-shell/extensions
+        sudo mkdir -v -p "$XDG_DATA_HOME"/gnome-shell/extensions
     fi
     # install extensions
     print_cyan "installing Dash2Dock Lite"
-    git clone https://github.com/icedman/dash2dock-lite.git "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
+    sudo git clone https://github.com/icedman/dash2dock-lite.git "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
     cd "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
-    make &&
+    sudo make &&
     cd ~ || exit
     print_green "Dash2Dock Lite installed"
     print_cyan "installing Search Light"
-    git clone https://github.com/icedman/search-light "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
+    sudo git clone https://github.com/icedman/search-light "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
     cd "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
-    make &&
+    sudo make &&
     cd ~ || exit
     print_green "Search Light installed"
-
 
 }
 
