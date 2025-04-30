@@ -136,28 +136,6 @@ function setup_postgres(){
     sudo systemctl start postgresql
 }
 
-function install_gnome_extensions(){
-
-    # check if .local/share/gnome-shell/extensions/ exists
-    if [[ ! -d $XDG_DATA_HOME/gnome-shell/extensions ]]; then
-        print_red "extensions dir. not found, creating it"
-        sudo mkdir -v -p "$XDG_DATA_HOME"/gnome-shell/extensions
-    fi
-    # install extensions
-    print_cyan "installing Dash2Dock Lite"
-    sudo git clone https://github.com/icedman/dash2dock-lite.git "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
-    cd "$XDG_DATA_HOME"/gnome-shell/extensions/dash2dock-lite &&
-    sudo make &&
-    cd ~ || exit
-    print_green "Dash2Dock Lite installed"
-    print_cyan "installing Search Light"
-    sudo git clone https://github.com/icedman/search-light "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
-    cd "$XDG_DATA_HOME"/gnome-shell/extensions/search-light &&
-    sudo make &&
-    cd ~ || exit
-    print_green "Search Light installed"
-
-}
 
 install_nodemanager() {
     print_cyan "checking if Fast Node Manager is installed!"
@@ -202,8 +180,6 @@ main(){
     print_cyan "and install vscode now"
     install_code && 
     print_green "vscode installed... yayyyy"
-    print_cyan "setting up gnome extensions"
-    install_gnome_extensions &&
     print_green "extensions installed!"
     print_cyan "installing some game launchers"
     install_games &&

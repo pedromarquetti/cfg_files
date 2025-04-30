@@ -27,6 +27,11 @@ curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local
 curl -L https://raw.githubusercontent.com/pedromarquetti/cfg_files/master/.local/bin/setup_noroot.sh | bash
 ```
 
+### Gnome Extensions
+
+in `~/.local/bin/install_gnome_ext.sh` there are some basic scripts that set up
+gnome ext.
+
 ### Setup NVIM
 
 ```
