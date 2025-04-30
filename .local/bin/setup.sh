@@ -238,6 +238,7 @@ main(){
     config checkout &&
 
     config config status.showUntrackedFiles no && 
+    chsh -s /bin/zsh
     print_yellow "change shell with chsh -s /bin/zsh, then login again!"
     print_yellow "for some reason, if i run chsh from here, the shell does not change"
 

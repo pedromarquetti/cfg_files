@@ -49,6 +49,5 @@ fi
 
 print_cyan "Cloning my configs..."
 git clone https://github.com/pedromarquetti/neovim_config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-print_green "Cloned! running nvim..."
+print_green "Cloned! Run nvim to finish setup"
 
-nvim
