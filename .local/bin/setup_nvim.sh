@@ -28,10 +28,13 @@ print_cyan() {
     echo -e "${COLORS[CYAN]}${1}${COLORS[OFF]}\n";
 }
 
+print_cyan 'updating and installing stuff'
+sudo apt update && sudo apt upgrade -y && sudo apt install -y git wget curl gcc python3 python3-pip lua5.4
+
 print_cyan "checking if Fast Node Manager is installed!"
 if [[ -f ~/.local/share/fnm/fnm ]]; then
-		print_green "fnm installed, installing node"
-		fnm install --latest && fnm use "$(fnm list-remote --latest)"
+	print_green "fnm installed, installing node"
+	fnm install --latest && fnm use "$(fnm list-remote --latest)"
 else
 
     print_red "NVM not installed! installing... " 
