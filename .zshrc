@@ -37,16 +37,14 @@ fpath=(~/.config/zsh/completions/ $fpath)
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git $ZSH_MODULES/zsh-snap
 
+
 source $ZSH_MODULES/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
-# the line below makes shell load faster, but breaks nvim LSP
-# export NVM_LAZY_LOAD=true
-# export NVM_COMPLETION=true
-# znap source lukechilds/zsh-nvm
 znap source zsh-users/zsh-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
+
 
 source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
@@ -82,10 +80,10 @@ bindkey '^[[Z'  undo                             # shift + tab undo last action
 bindkey '^ '    autosuggest-accept	        # accept autosuggest with ctrl + space 
 bindkey '^I'    menu-complete                   # Tab to cycle through options
 
-# enable completion features
-autoload -Uz compinit && compinit 
-zstyle ':completion:*:*:*:*:*' menu select 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+# # enable completion features
+# autoload -Uz compinit && compinit 
+# zstyle ':completion:*:*:*:*:*' menu select 
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 # enable git status
 autoload -Uz vcs_info
@@ -105,7 +103,7 @@ zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3} %c%u%F{5}[%F{2}%b%F{5}]%f
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # Wait this many seconds for typing to stop, before showing completions.
-zstyle ':autocomplete:*' min-delay 0.09  # seconds (float)
+# zstyle ':autocomplete:*' min-delay 0.09  # seconds (float)
 
 # custom prompt
 PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) '
