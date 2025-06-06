@@ -1,7 +1,7 @@
 # History configurations
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
-SAVEHIST=20000
+HISTSIZE=10000000
+SAVEHIST=10000000
 
 # dup. ignore opts
 setopt HIST_EXPIRE_DUPS_FIRST
