@@ -3,12 +3,14 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=20000
 
-setopt appendhistory
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_all_dups   # ignore duplicated commands history list
-setopt hist_ignore_space      # ignore commands that start with space
-setopt hist_verify            # show command with history expansion to user before running it
-# setopt share_history        # share command history data
+# dup. ignore opts
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt APPENDHISTORY
 
 export WORDCHARS='*?_.~=&;!#$%^' #ctrl+<-(or backspace/del) will treat these as part of the word
 export NVIM_DIR="$HOME/.config/nvim"
