@@ -106,8 +106,6 @@ function install_games(){
 function install_misc(){
     print_cyan "installing gufw"
     sudo apt install -y gufw &&
-    print_cyan "installing spotify with flatpak"
-    flatpak install --system -y  com.spotify.Client &&
     print_cyan "installing vlc"
     sudo apt install -y vlc &&
     print_cyan "installing qbittorrent"
@@ -120,7 +118,21 @@ function install_misc(){
     flatpak install --system -y org.telegram.desktop 
     print_cyan "installing vim"
     sudo apt install -y vim 
+
+    print_cyan "Installing CLI spotify client..."
+
+    sudo apt install libssl-dev libasound2-dev libdbus-1-dev
+    if [[ ! -x /bin/cargo ]]; then
+        setup_rust
+    fi
+
+    cd /tmp/ && git clone https://github.com/aome510/spotify-player && cd spotify-player && cargo install spotify-player --features notify,daemon,fzf
     
+}
+
+setup_rust() {
+    print_green "setting up rust"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 }
 
 function setup_postgres(){
