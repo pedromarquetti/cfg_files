@@ -126,8 +126,11 @@ function install_misc(){
         setup_rust
     fi
 
-    cd /tmp/ && git clone https://github.com/aome510/spotify-player && cd spotify-player && cargo install spotify-player --features notify,daemon,fzf
-    
+    cd /tmp/ && git clone https://github.com/aome510/spotify-player && cd spotify-player && cargo install spotify-player --features notify,daemon,fzf  
+
+    if [[ -f $HOME/.cargo/bin/spotify_player ]]; then
+        mv $HOME/.cargo/bin/spotify_player $HOME/.local/bin/spotify
+    fi
 }
 
 setup_rust() {
