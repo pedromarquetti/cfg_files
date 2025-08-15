@@ -19,6 +19,7 @@ export VISUAL=nvim
 export ZSH=$HOME/.config/zsh
 export ZSH_MODULES=$ZSH/modules
 
+# where i keep completions for commands
 if [[ ! -d ~/.config/zsh/completions/ ]]; then
     mkdir ~/.config/zsh/completions/
 fi
@@ -29,6 +30,7 @@ fpath=(~/.config/zsh/completions/ $fpath)
 [[ -d ~/.config/zsh/modules ]] || 
     # || ==> right-side code will only exec if left side code == false
     # ^ if [[ ! -d ~/Git ]]...
+    # The opposite would be [[ ... ]] &&..
     echo "Creating Git dir at ~" \ 
     mkdir -p $ZSH_MODULES
 
@@ -43,15 +45,18 @@ fpath=(~/.config/zsh/completions/ $fpath)
 source $ZSH_MODULES/zsh-snap/znap.zsh
 
 # `znap source` automatically downloads and starts your plugins.
+znap source jeffreytse/zsh-vi-mode
 znap source zsh-users/zsh-syntax-highlighting
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 
-
 source $HOME/.profile # i keep some other configs here, you can comment this line out if you want
 
-#######################
-# copied from old zshrc>
+# zsh-vi-mode options
+ZVM_KEYTIMEOUT=0.01
+ZVM_ESCAPE_KEYTIMEOUT=0.01
+
+
 setopt autocd              # change directory just by typing its name
 setopt correct             # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -63,7 +68,6 @@ setopt promptsubst         # enable command substitution in prompt
 setopt prompt_subst
 
 # configure key keybindings
-# bindkey -e                                    # emacs key bindings
 bindkey '^K' kill-whole-line                    # kill whole line
 bindkey ' ' magic-space                         # do history expansion on space
 bindkey '^[[3;5~' kill-word                     # ctrl + delete -> kill word foward
@@ -72,8 +76,8 @@ bindkey '^H' backward-kill-word                 # kill word left of cursor << th
 bindkey '^[[3~' delete-char                     # delete
 bindkey '^[[1;5C' forward-word                  # ctrl + ->
 bindkey '^[[1;5D' backward-word                 # ctrl + <-
-bindkey '^B' backward-word                      # ctrl+B forward word
-bindkey '^\' forward-word                       # ctrl+w forward word
+bindkey '^h' backward-word                      # ctrl+B forward word
+bindkey '^l' forward-word                       # ctrl+w forward word
 bindkey '^[[5~' beginning-of-buffer-or-history  # page up
 bindkey '^[[6~' end-of-buffer-or-history        # page down
 bindkey '^[[H'  beginning-of-line                # home
@@ -82,10 +86,10 @@ bindkey '^[[Z'  undo                             # shift + tab undo last action
 bindkey '^ '    autosuggest-accept	        # accept autosuggest with ctrl + space 
 bindkey '^I'    menu-complete                   # Tab to cycle through options
 
-# # enable completion features
-# autoload -Uz compinit && compinit 
-# zstyle ':completion:*:*:*:*:*' menu select 
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
+# enable completion features
+autoload -Uz compinit && compinit 
+zstyle ':completion:*:*:*:*:*' menu select 
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
 # enable git status
 autoload -Uz vcs_info
@@ -105,11 +109,35 @@ zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3} %c%u%F{5}[%F{2}%b%F{5}]%f
 zstyle ':autocomplete:*' min-input 1 # Wait until 1 character have been typed, before showing completions.
 
 # Wait this many seconds for typing to stop, before showing completions.
-# zstyle ':autocomplete:*' min-delay 0.09  # seconds (float)
+zstyle ':autocomplete:*' min-delay 0.09  # seconds (float)
 
 # custom prompt
 PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) '
 RPROMPT='%F{green}%(?.√.%F{red}error code %?)%f %F{green}%n%F{white}'
+
+
+# Add indicators for shell status
+function zvm_after_select_vi_mode() {
+  case $ZVM_MODE in
+    $ZVM_MODE_NORMAL)
+        PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) %K{#4287f5}%F{black}N%k%f  '
+    ;;
+    $ZVM_MODE_INSERT)
+        PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) %K{#6fde57}%F{black}I%k%f  '
+    ;;
+    $ZVM_MODE_VISUAL)
+        PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) %K{#b689e0}%F{black}V%k%f  '
+    ;;
+    $ZVM_MODE_VISUAL_LINE)
+        PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) %K{#8b66ad}%F{black}V%k%f  '
+    ;;
+    $ZVM_MODE_REPLACE)
+        PROMPT='${vcs_info_msg_0_}%F{green}%~ %F{white}%(!.#.$) %K{#b85e83}%F{black}V%k%f  '
+    ;;
+  esac
+}
+
+# Colors
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
@@ -187,8 +215,6 @@ function updater() {
     flatpak -y update &&
     printf "${RED}upgrading flatpak:${NC} \n" &&
     flatpak -y upgrade &&
-    printf "${RED}remove unused?:${NC} \n" &&
-    flatpak uninstall --unused
     printf "${RED}updating znap\n${NC}" &&
     znap pull
 
@@ -223,24 +249,12 @@ alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias c='clear'
 
-# ### git
-alias gi="git init"
-alias gru="git remote update"
-alias gpull="git pull"
-alias gpush="git push"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-
-
 ### misc
-# alias vim='vim -c "set number"'   # show
 alias nano='nano -l'                # line nums
 alias img='eog '                    # img opener
 alias rm='rm -ri'                   # recursive  & ask to remove
 alias rmf='rm -rf '                 # recursive force -- caution
 alias whois='whois -H'              # hides legal stuff
-alias myip='python3 /home/phlm/Documents/programming/python/my_ip/my_ip.py'
 alias open='gio open 2>/dev/null '  # open with default app
 alias py='python3'
 alias pip3update="pip freeze --user | cut -d'=' -f1 | xargs -n1 pip install -U"
@@ -248,15 +262,15 @@ alias pingg='ping -c 10'             # ping limiter
 alias mkdir='mkdir -p '
 
 # dotfile commands
-alias backup_dconf="dconf dump / > $HOME/.backup/backup.dconf"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME" 
+
+# dconf aliases
+alias backup_dconf="dconf dump / > $HOME/.backup/backup.dconf"
 alias dconf_restore="dconf load / < $HOME/.backup/backup.dconf"
 
-
-export PATH=$PATH:/home/phlm/.spicetify
-
-# fnm
-FNM_PATH="/home/phlm/.local/share/fnm"
+# fnm - Fast Node Manager
+# NOTE: https://github.com/Schniz/fnm
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env --use-on-cd --version-file-strategy=recursive  --shell zsh`"
